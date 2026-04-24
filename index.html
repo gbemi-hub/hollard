@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horllardfashion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #F6F1EB;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ================= DESKTOP HEADER ================= */
+        .main-header {
+            text-align: center;
+            padding: 25px 20px 20px 20px;
+            background: #F6F1EB;
+        }
+
+        /* Top row - HOLLARD FASHION */
+        .logo-top {
+            margin-bottom: 25px;
+        }
+
+        .logo-top span {
+            font-size: 20px;
+            letter-spacing: 4px;
+            font-family: "EB Garamond", serif;
+            font-weight: 800;
+            color: #1a1a1ac0;
+        }
+
+        /* Desktop Navigation */
+        .nav-bottom {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-bottom a {
+            text-decoration: none;
+            font-size: 15px;
+            letter-spacing: 1.5px;
+            color: #1a1a1abb;
+            font-weight: 600;
+            font-family: Arial, sans-serif;
+        }
+
+        .nav-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* ================= MOBILE HEADER ================= */
+        .mobile-header {
+            display: none;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: #F6F1EB;
+        }
+
+        .mobile-logo span {
+            font-size: 20px;
+            letter-spacing: 4px;
+            font-family: "EB Garamond", serif;
+            font-weight: 800;
+            color: #1a1a1ac0;
+        }
+
+        .hamburger {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 24px;
+            background: none;
+            border: none;
+            z-index: 1001;
+        }
+
+        /* Mobile Navigation Menu */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: #F6F1EB;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            padding-top: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mobile-nav.open {
+            left: 0;
+        }
+
+        .mobile-nav a {
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 12px 25px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .mobile-nav a:hover {
+            background: #e0d6cc;
+        }
+
+        /* Overlay when menu is open */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* ================= SECTION 1: THE BRIDAL COLLECTION ================= */
+        .collection-section {
+            height: 100vh;
+            background: url('images/front.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .collection-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .collection-section h2 {
+            position: relative;
+            z-index: 1;
+            font-size: 48px;
+            letter-spacing: 4px;
+            font-family: 'Didot', serif;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .collection-section .btn {
+            position: relative;
+            z-index: 1;
+            text-decoration: none;
+            color: white;
+            border: 1px solid white;
+            padding: 12px 30px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .collection-section .btn:hover {
+            background: white;
+            color: black;
+        }
+
+        /* ================= SECTION 2: BESPOKE CAROUSEL ================= */
+        .bespoke-carousel-section {
+            background: #F6F1EB;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .bespoke-title {
+            font-size: 36px;
+            letter-spacing: 3px;
+            font-family: 'Didot', serif;
+            font-weight: 400;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .carousel-container {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            flex: 0 0 calc(25% - 15px);
+            min-width: calc(25% - 15px);
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .carousel-slide img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Arrows */
+        .carousel-arrow {
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .carousel-arrow:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        /* VIEW MORE Button */
+        .bespoke-button-wrapper {
+            margin-top: 50px;
+        }
+
+        .bespoke-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #1a1a1a;
+            border: 1px solid #1a1a1a;
+            padding: 12px 35px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .bespoke-btn:hover {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        /* ================= FOOTER ================= */
+        .footer {
+            background: #222222;
+            padding: 60px 40px 20px 40px;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 50px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .footer-column h3 {
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .footer-column p,
+        .footer-column ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            text-decoration: none;
+            color: whitesmoke;
+            font-size: 13px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: #ddd;
+            text-decoration: underline;
+        }
+
+        .contact-item {
+            margin-bottom: 15px !important;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            font-size: 16px;
+            width: 20px;
+        }
+
+        .inquiry-link {
+            font-weight: 500;
+        }
+
+        .footer-bottom {
+            padding-top: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .footer-bottom-content a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        .footer-bottom-content a:hover {
+            text-decoration: underline;
+            color: #ddd;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .carousel-slide {
+                flex: 0 0 calc(50% - 10px);
+                min-width: calc(50% - 10px);
+            }
+            
+            .carousel-slide img {
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-header {
+                display: none;
+            }
+            
+            .mobile-header {
+                display: flex;
+            }
+            
+            .carousel-slide {
+                flex: 0 0 100%;
+                min-width: 100%;
+            }
+            
+            .carousel-slide img {
+                height: 250px;
+            }
+
+            .bespoke-title {
+                font-size: 24px;
+            }
+
+            .carousel-arrow {
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= DESKTOP HEADER ================= -->
+    <header class="main-header">
+        <div class="logo-top">
+            <span>HOLLARD FASHION</span>
+        </div>
+        <nav class="nav-bottom">
+            <a href="index.html">HOME</a>
+            <a href="bridal.html">BRIDAL</a>
+            <a href="nonbridal.html">NON-BRIDAL</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="enquiry.html">MAKE AN ENQUIRY</a>
+        </nav>
+    </header>
+
+    <!-- ================= MOBILE HEADER ================= -->
+    <div class="mobile-header">
+        <button class="hamburger" id="hamburgerBtn">☰</button>
+        <div class="mobile-logo">
+            <span>HOLLARD FASHION</span>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">HOME</a>
+        <a href="bridal.html">BRIDAL</a>
+        <a href="nonbridal.html">NON-BRIDAL</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="enquiry.html">MAKE AN ENQUIRY</a>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <main>
+        <!-- SECTION 1: THE BRIDAL COLLECTION -->
+        <section class="collection-section">
+            <h2>THE BRIDAL COLLECTION</h2>
+            <a href="bridal.html" class="btn">VIEW COLLECTION</a>
+        </section>
+
+        <!-- SECTION 2: BESPOKE CAROUSEL -->
+        <section class="bespoke-carousel-section">
+            <h2 class="bespoke-title">BESPOKE WEARS FOR ANY OCCASION</h2>
+            
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow left-arrow" id="prevBtn">❮</button>
+                
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-slide">
+                            <img src="images/caro 1.jpg" alt="Bespoke 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/caro2.jpg" alt="Bespoke 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/caro3.jpg" alt="Bespoke 3">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/new 1.jpg" alt="Bespoke 4">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/bespok 10.jpg" alt="Bespoke 5">
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-arrow right-arrow" id="nextBtn">❯</button>
+            </div>
+            
+            <div class="bespoke-button-wrapper">
+                <a href="nonbridal.html" class="bespoke-btn">VIEW MORE</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>GET IN TOUCH</h3>
+                <p class="contact-item">
+                    <span class="icon">💬</span> 
+                    <a href="tel:07429328985">07429328985</a>
+                </p>
+                <p class="contact-item">
+                    <span class="icon">✉️</span> 
+                    <a href="enquiry.html" class="inquiry-link">Make an Inquiry</a>
+                </p>
+            </div>
+            <div class="footer-column">
+                <h3>QUICK LINKS</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="bridal.html">Shop</a></li>
+                    <li><a href="nonbridal.html">Services</a></li>
+                    <li><a href="enquiry.html">Shipping</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>&nbsp;</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Condition</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>Copyright © 2022 HollardFashion</p>
+                <p>Website designed by <a href="#">orecodes</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Carousel - 4 Images Visible, Continuous Loop
+        const track = document.getElementById('carouselTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        
+        let slides = Array.from(document.querySelectorAll('.carousel-slide'));
+        const visibleSlides = 4;
+        let currentIndex = 0;
+        let autoSlideInterval;
+        const autoSlideDelay = 2000;
+        
+        function setupInfiniteCarousel() {
+            const clones = slides.slice(0, visibleSlides).map(slide => slide.cloneNode(true));
+            clones.forEach(clone => track.appendChild(clone));
+            slides = Array.from(document.querySelectorAll('.carousel-slide'));
+            updateCarousel(false);
+        }
+        
+        function getSlideWidth() {
+            const slide = slides[0];
+            const rect = slide.getBoundingClientRect();
+            const gap = 20;
+            return rect.width + gap;
+        }
+        
+        function updateCarousel(transition = true) {
+            if (!transition) {
+                track.style.transition = 'none';
+            } else {
+                track.style.transition = 'transform 0.5s ease-in-out';
+            }
+            const slideWidth = getSlideWidth();
+            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+        
+        function nextSlide() {
+            const maxIndex = slides.length - visibleSlides;
+            
+            currentIndex++;
+            updateCarousel(true);
+            
+            if (currentIndex >= maxIndex) {
+                setTimeout(() => {
+                    currentIndex = 0;
+                    updateCarousel(false);
+                }, 500);
+            }
+            resetAutoSlide();
+        }
+        
+        function prevSlide() {
+            if (currentIndex <= 0) {
+                const maxIndex = slides.length - visibleSlides;
+                currentIndex = maxIndex - 1;
+                updateCarousel(false);
+                setTimeout(() => {
+                    currentIndex--;
+                    updateCarousel(true);
+                }, 50);
+            } else {
+                currentIndex--;
+                updateCarousel(true);
+            }
+            resetAutoSlide();
+        }
+        
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, autoSlideDelay);
+        }
+        
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+        
+        setupInfiniteCarousel();
+        
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+        
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                updateCarousel(false);
+            }, 100);
+        });
+        
+        startAutoSlide();
+        
+        // Hamburger Menu Toggle
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const overlay = document.getElementById('overlay');
+        
+        if (hamburgerBtn) {
+            function openMenu() {
+                mobileNav.classList.add('open');
+                overlay.classList.add('active');
+                hamburgerBtn.innerHTML = '✕';
+            }
+            
+            function closeMenu() {
+                mobileNav.classList.remove('open');
+                overlay.classList.remove('active');
+                hamburgerBtn.innerHTML = '☰';
+            }
+            
+            hamburgerBtn.addEventListener('click', () => {
+                if (mobileNav.classList.contains('open')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+            
+            if (overlay) {
+                overlay.addEventListener('click', closeMenu);
+            }
+            
+            const mobileLinks = document.querySelectorAll('.mobile-nav a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        }
+    </script>
+</body>
+</html>

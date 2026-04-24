@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horllardfashion - Bridal Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #F6F1EB;
+        }
+
+        .main-header {
+            text-align: center;
+            padding: 25px 20px 20px 20px;
+            background: #F6F1EB;
+        }
+
+        /* Top row - HOLLARD FASHION */
+        .logo-top {
+            margin-bottom: 25px;
+        }
+
+        .logo-top span {
+            font-size: 20px;
+            letter-spacing: 4px;
+            font-family: "EB Garamond", serif;
+            font-weight: 800;
+            color: #1a1a1ac0;
+        }
+
+        /* Desktop Navigation */
+        .nav-bottom {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-bottom a {
+            text-decoration: none;
+            font-size: 15px;
+            letter-spacing: 1.5px;
+            color: #1a1a1abb;
+            font-weight: 600;
+            font-family: Arial, sans-serif;
+        }
+
+        .nav-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* ================= MOBILE HEADER ================= */
+        .mobile-header {
+            display: none;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: #F6F1EB;
+        }
+
+        .mobile-logo span {
+            font-size: 20px;
+            letter-spacing: 4px;
+            font-family: "EB Garamond", serif;
+            font-weight: 800;
+            color: #1a1a1ac0;
+        }
+
+        .hamburger {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 24px;
+            background: none;
+            border: none;
+            z-index: 1001;
+        }
+
+        /* Mobile Navigation Menu */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: #F6F1EB;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            padding-top: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mobile-nav.open {
+            left: 0;
+        }
+
+        .mobile-nav a {
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 12px 25px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .mobile-nav a:hover {
+            background: #e0d6cc;
+        }
+
+        /* Overlay when menu is open */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* ================= IMAGE BACKGROUND SECTION ================= */
+        .image-bg-section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .image-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .image-bg-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .image-bg-content h1 {
+            font-size: 48px;
+            letter-spacing: 4px;
+            font-family: 'Didot', serif;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .image-bg-content p {
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            font-family: Arial, sans-serif;
+        }
+
+        .image-bg-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            border: 1px solid white;
+            padding: 12px 35px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .image-bg-btn:hover {
+            background: white;
+            color: black;
+        }
+
+        /* ================= IMAGES GRID - Desktop ================= */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            justify-items: center;
+            padding: 10px 2px;
+        }
+
+        /* ================= IMAGES GRID - Mobile ================= */
+        .products-grid-mobile {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px 15px;
+        }
+
+        .products-grid-mobile .product-item {
+            width: 100%;
+        }
+
+        .products-grid-mobile .product-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .product-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        /* VIEW MORE Button */
+        .bespoke-button-wrapper {
+            margin: 50px;
+            text-align: center;
+        }
+
+        .bespoke-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #1a1a1a;
+            border: 1px solid #1a1a1a;
+            padding: 12px 35px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .bespoke-btn:hover {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        /* ================= FOOTER ================= */
+        .footer {
+            background: #222222;
+            padding: 60px 40px 20px 40px;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 50px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .footer-column h3 {
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .footer-column p,
+        .footer-column ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            text-decoration: none;
+            color: whitesmoke;
+            font-size: 13px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: #ddd;
+            text-decoration: underline;
+        }
+
+        .contact-item {
+            margin-bottom: 15px !important;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            font-size: 16px;
+            width: 20px;
+        }
+
+        .inquiry-link {
+            font-weight: 500;
+        }
+
+        .footer-bottom {
+            padding-top: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .footer-bottom-content a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        .footer-bottom-content a:hover {
+            text-decoration: underline;
+            color: #ddd;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 768px) {
+            .main-header {
+                display: none;
+            }
+            
+            .mobile-header {
+                display: flex;
+            }
+            
+            .image-bg-content h1 {
+                font-size: 32px;
+            }
+            
+            .image-bg-content p {
+                font-size: 14px;
+            }
+            
+            .products-grid {
+                display: none;
+            }
+            
+            .products-grid-mobile {
+                display: flex;
+            }
+            
+            .bespoke-button-wrapper {
+                margin: 30px 20px;
+            }
+            
+            .footer {
+                padding: 40px 20px 20px 20px;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= DESKTOP HEADER ================= -->
+    <header class="main-header">
+        <div class="logo-top">
+            <span>HOLLARD FASHION</span>
+        </div>
+        <nav class="nav-bottom">
+            <a href="index.html">HOME</a>
+            <a href="bridal.html">BRIDAL</a>
+            <a href="nonbridal.html">NON BRIDAL</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="enquiry.html">MAKE AN ENQUIRY</a>
+        </nav>
+    </header>
+
+    <!-- ================= MOBILE HEADER ================= -->
+    <div class="mobile-header">
+        <button class="hamburger" id="hamburgerBtn">☰</button>
+        <div class="mobile-logo">
+            <span>HOLLARD FASHION</span>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">HOME</a>
+        <a href="bridal.html">BRIDAL</a>
+        <a href="nonbridal.html">NON BRIDAL</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="enquiry.html">MAKE AN ENQUIRY</a>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ================= IMAGE BACKGROUND SECTION ================= -->
+    <section class="image-bg-section" style="background-image: url('images/0L2A8474-Edit.jpg.jpg');">
+        <div class="image-bg-overlay"></div>
+        <div class="image-bg-content">
+            <h1>THE BRIDAL COLLECTION</h1>
+            <p>Discover timeless elegance for your special day</p>
+            <a href="enquiry.html" class="image-bg-btn">MAKE AN ENQUIRY</a>
+        </div>
+    </section>
+
+    <!-- ================= IMAGES GRID - DESKTOP ================= -->
+    <div class="products-grid">
+        <div class="product-item">
+            <img src="images/image 1 i.jpg"  
+                 onmouseover="this.src='images/image 2 i.jpg'"
+                 onmouseout="this.src='images/image 1 i.jpg'">
+        </div>
+        <div class="product-item">
+            <img src="images/iknowher.jpg" 
+                 onmouseover="this.src='images/ikonwher2.jpg'"
+                 onmouseout="this.src='images/iknowher.jpg'">
+        </div>
+        <div class="product-item">
+            <img src="images/image 2 a.jpg" 
+                 onmouseover="this.src='images/image 1 a.jpg'"
+                 onmouseout="this.src='images/image 2 a.jpg'">
+        </div>
+        <div class="product-item">
+            <img src="images/1a.jpg" 
+                 onmouseover="this.src='images/1b.jpg'"
+                 onmouseout="this.src='images/1a.jpg'">
+        </div>
+        <div class="product-item">
+            <img src="images/2a.jpg" 
+                 onmouseover="this.src='images/2b.jpg'"
+                 onmouseout="this.src='images/2a.jpg'">
+        </div>
+        <div class="product-item">
+            <img src="images/3a.jpg" 
+                 onmouseover="this.src='images/3b.jpg'"
+                 onmouseout="this.src='images/3a.jpg'">
+        </div>
+        <div class="product-item">
+            <img src="images/4a.jpg" 
+                 onmouseover="this.src='images/4b.jpg'"
+                 onmouseout="this.src='images/4a.jpg'">
+        </div>
+        <div class="product-item">
+            <img src="images/5a.jpg" 
+                 onmouseover="this.src='images/5b.jpg'"
+                 onmouseout="this.src='images/5a.jpg'">
+        </div>
+        <div class="product-item">
+            <img src="images/bridal 2.jpeg" 
+                 onmouseover="this.src='images/bridal i.jpeg'"
+                 onmouseout="this.src='images/bridal 2.jpeg'">
+        </div>
+    </div>
+
+    <!-- ================= IMAGES GRID - MOBILE ================= -->
+    <div class="products-grid-mobile">
+        <div class="product-item">
+            <img src="images/image 1 i.jpg"  
+                 onmouseover="this.src='images/image 2 i.jpg'"
+                 onmouseout="this.src='images/image 1 i.jpg'">
+        </div>
+        <div class="product-item">
+            <img src="images/iknowher.jpg" 
+                 onmouseover="this.src='images/ikonwher2.jpg'"
+                 onmouseout="this.src='images/iknowher.jpg'">
+        </div>
+        <div class="product-item">
+            <img src="images/image 2 a.jpg" 
+                 onmouseover="this.src='images/image 1 a.jpg'"
+                 onmouseout="this.src='images/image 2 a.jpg'">
+        </div>
+        <div class="product-item">
+            <img src="images/1a.jpg" 
+                 onmouseover="this.src='images/1b.jpg'"
+                 onmouseout="this.src='images/1a.jpg'">
+        </div>
+        <div class="product-item">
+            <img src="images/2a.jpg" 
+                 onmouseover="this.src='images/2b.jpg'"
+                 onmouseout="this.src='images/2a.jpg'">
+        </div>
+        <div class="product-item">
+            <img src="images/3a.jpg" 
+                 onmouseover="this.src='images/3b.jpg'"
+                 onmouseout="this.src='images/3a.jpg'">
+        </div>
+        <div class="product-item">
+            <img src="images/4a.jpg" 
+                 onmouseover="this.src='images/4b.jpg'"
+                 onmouseout="this.src='images/4a.jpg'">
+        </div>
+        <div class="product-item">
+            <img src="images/5a.jpg" 
+                 onmouseover="this.src='images/5b.jpg'"
+                 onmouseout="this.src='images/5a.jpg'">
+        </div>
+        <div class="product-item">
+            <img src="images/6a.jpg" 
+                 onmouseover="this.src='images/6a.jpg'"
+                 onmouseout="this.src='images/6a.jpg'">
+        </div>
+    </div>
+
+    <!-- VIEW MORE Button -->
+    <div class="bespoke-button-wrapper">
+        <a href="https://www.instagram.com/horllardfashion?igsh=MTV1MmdoNWxlbHhsbQ%3D%3D&utm_source=qr" target="_blank" class="bespoke-btn">VIEW MORE</a>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>GET IN TOUCH</h3>
+                <p class="contact-item">
+                    <span class="icon">💬</span> 
+                    <a href="tel:07429328985">07429328985</a>
+                </p>
+                <p class="contact-item">
+                    <span class="icon">✉️</span> 
+                    <a href="enquiry.html" class="inquiry-link">Make an Inquiry</a>
+                </p>
+            </div>
+            <div class="footer-column">
+                <h3>QUICK LINKS</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="bridal.html">Shop</a></li>
+                    <li><a href="nonbridal.html">Services</a></li>
+                    <li><a href="enquiry.html">Shipping</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>&nbsp;</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Condition</a></li>
+                    <li><a href="enquiry.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>Copyright © 2022 HollardFashion</p>
+                <p>Website designed by <a href="#">orecodes</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const overlay = document.getElementById('overlay');
+        
+        function openMenu() {
+            mobileNav.classList.add('open');
+            overlay.classList.add('active');
+            hamburgerBtn.innerHTML = '✕';
+        }
+        
+        function closeMenu() {
+            mobileNav.classList.remove('open');
+            overlay.classList.remove('active');
+            hamburgerBtn.innerHTML = '☰';
+        }
+        
+        if (hamburgerBtn) {
+            hamburgerBtn.addEventListener('click', () => {
+                if (mobileNav.classList.contains('open')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+        }
+        
+        if (overlay) {
+            overlay.addEventListener('click', closeMenu);
+        }
+        
+        const mobileLinks = document.querySelectorAll('.mobile-nav a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
+</body>
+</html>
