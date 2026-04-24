@@ -414,16 +414,18 @@
                 font-size: 32px;
             }
             
-            /* ENLARGED CAROUSEL IMAGES ON MOBILE */
+            /* ENLARGED CAROUSEL IMAGES ON MOBILE - WIDER & BOLDER */
             .carousel-slide {
                 flex: 0 0 100%;
                 min-width: 100%;
             }
             
             .carousel-slide img {
-                height: 450px;  /* Increased from 250px to 450px - MUCH LARGER */
+                height: 480px;  /* Increased from 450px to 480px - TALLER */
                 width: 100%;
                 object-fit: cover;
+                border-radius: 8px;  /* Added slight rounded corners for better look */
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);  /* Added subtle shadow for depth */
             }
             
             /* Make arrows more visible on mobile */
@@ -460,9 +462,11 @@
                 font-size: 28px;
             }
             
-            /* Even larger on very small phones */
+            /* Even wider/bolder on very small phones */
             .carousel-slide img {
-                height: 400px;  /* Slightly smaller but still large */
+                height: 420px;  /* Increased from 400px to 420px */
+                border-radius: 6px;
+                box-shadow: 0 3px 12px rgba(0,0,0,0.1);
             }
         }
     </style>
@@ -472,12 +476,12 @@
     <!-- ================= DESKTOP HEADER ================= -->
     <header class="main-header">
         <div class="logo-top">
-            <span>HOLLARD FASHION</span>
+            <span>HORLLARD FASHION</span>
         </div>
         <nav class="nav-bottom">
             <a href="index.html">HOME</a>
             <a href="bridal.html">BRIDAL</a>
-            <a href="nonbridal.html">NON-BRIDAL</a>
+            <a href="nonbridal.html">BESPOKE</a>
             <a href="about.html">ABOUT US</a>
             <a href="enquiry.html">MAKE AN ENQUIRY</a>
         </nav>
@@ -495,7 +499,7 @@
     <div class="mobile-nav" id="mobileNav">
         <a href="index.html">HOME</a>
         <a href="bridal.html">BRIDAL</a>
-        <a href="nonbridal.html">NON-BRIDAL</a>
+        <a href="nonbridal.html">BESPOKE</a>
         <a href="about.html">ABOUT US</a>
         <a href="enquiry.html">MAKE AN ENQUIRY</a>
     </div>
