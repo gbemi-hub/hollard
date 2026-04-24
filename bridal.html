@@ -370,8 +370,14 @@
                 display: flex;
             }
             
+            /* Mobile header background height - added */
+            .image-bg-section {
+                height: 70vh;
+                min-height: 450px;
+            }
+            
             .image-bg-content h1 {
-                font-size: 32px;
+                font-size: 12px;
             }
             
             .image-bg-content p {
@@ -402,6 +408,27 @@
             .footer-bottom-content {
                 flex-direction: column;
                 text-align: center;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            .image-bg-section {
+                height: 60vh;
+                min-height: 400px;
+            }
+            
+            .image-bg-content h1 {
+                font-size: 28px;
+            }
+            
+            .image-bg-content p {
+                font-size: 12px;
+            }
+            
+            .image-bg-btn {
+                padding: 10px 28px;
+                font-size: 11px;
             }
         }
     </style>

@@ -144,7 +144,6 @@
 
         /* ================= SECTION 1: THE BRIDAL COLLECTION ================= */
         .collection-section {
-            height: 100vh;
             background: url('images/front.jpg') center/cover no-repeat;
             display: flex;
             flex-direction: column;
@@ -153,6 +152,7 @@
             text-align: center;
             color: white;
             position: relative;
+            height: 100vh;
         }
 
         .collection-section::before {
@@ -391,7 +391,7 @@
             }
             
             .carousel-slide img {
-                height: 280px;
+                height: 320px;
             }
         }
 
@@ -404,32 +404,65 @@
                 display: flex;
             }
             
+            /* Mobile header background height */
+            .collection-section {
+                height: 70vh;
+                min-height: 450px;
+            }
+            
+            .collection-section h2 {
+                font-size: 32px;
+            }
+            
+            /* ENLARGED CAROUSEL IMAGES ON MOBILE */
             .carousel-slide {
                 flex: 0 0 100%;
                 min-width: 100%;
             }
             
             .carousel-slide img {
-                height: 250px;
+                height: 450px;  /* Increased from 250px to 450px - MUCH LARGER */
+                width: 100%;
+                object-fit: cover;
+            }
+            
+            /* Make arrows more visible on mobile */
+            .carousel-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                background: rgba(0,0,0,0.6);
             }
 
             .bespoke-title {
                 font-size: 24px;
             }
 
-            .carousel-arrow {
-                width: 35px;
-                height: 35px;
-                font-size: 18px;
-            }
-
             .footer-container {
                 flex-direction: column;
+                gap: 30px;
             }
 
             .footer-bottom-content {
                 flex-direction: column;
                 text-align: center;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            .collection-section {
+                height: 60vh;
+                min-height: 400px;
+            }
+            
+            .collection-section h2 {
+                font-size: 28px;
+            }
+            
+            /* Even larger on very small phones */
+            .carousel-slide img {
+                height: 400px;  /* Slightly smaller but still large */
             }
         }
     </style>

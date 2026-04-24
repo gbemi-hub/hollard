@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horllardfashion</title>
+    <title>Horllardfashion - About Us</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -249,6 +249,12 @@
                 display: flex;
             }
 
+            /* Mobile header background height - adjusted */
+            .collection-section {
+                height: 70vh;
+                /* min-height: 450px; */
+            }
+
             .footer-container {
                 flex-direction: column;
             }
@@ -256,6 +262,14 @@
             .footer-bottom-content {
                 flex-direction: column;
                 text-align: center;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            .collection-section {
+                height: 60vh;
+                min-height: 400px;
             }
         }
 
@@ -835,7 +849,7 @@
         // Testimonial Data (MANUAL ONLY - NO AUTO-SLIDE)
         const testimonials = [
             {
-                text: "I’m honestly blown away by this dress. The craftsmanship is incredible, every detail is so thoughtfully done, and the fit is perfect. It’s not just a dress, it’s a statement piece, elegant, unique, and absolutely stunning. I couldn’t be happier with how it turned out. Thank you for creating something so beautiful!",
+                text: "I'm honestly blown away by this dress. The craftsmanship is incredible, every detail is so thoughtfully done, and the fit is perfect. It's not just a dress, it's a statement piece, elegant, unique, and absolutely stunning. I couldn't be happier with how it turned out. Thank you for creating something so beautiful!",
                 author: "- Amodu Esther"
             },
             {
