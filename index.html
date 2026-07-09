@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Horllardfashion - Brides of the Motherland</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horllardfashion</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -17,7 +16,7 @@
 
         body {
             background: #F6F1EB;
-            font-family: 'Inter', Arial, sans-serif;
+            font-family: Arial, sans-serif;
         }
 
         .main-header {
@@ -26,7 +25,6 @@
             background: #F6F1EB;
         }
 
-        /* Top row - HOLLARD FASHION */
         .logo-top {
             margin-bottom: 25px;
         }
@@ -39,7 +37,6 @@
             color: #1a1a1ac0;
         }
 
-        /* Desktop Navigation */
         .nav-bottom {
             display: flex;
             justify-content: center;
@@ -60,7 +57,6 @@
             text-decoration: underline;
         }
 
-        /* Dropdown */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -99,7 +95,6 @@
             display: block;
         }
 
-        /* ================= MOBILE HEADER ================= */
         .mobile-header {
             display: none;
             position: relative;
@@ -123,19 +118,17 @@
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            font-size: 28px;
+            font-size: 24px;
             background: none;
             border: none;
             z-index: 1001;
-            color: #1a1a1a;
         }
 
-        /* Mobile Navigation Menu */
         .mobile-nav {
             position: fixed;
             top: 0;
-            left: -280px;
-            width: 280px;
+            left: -250px;
+            width: 250px;
             height: 100%;
             background: #F6F1EB;
             box-shadow: 2px 0 10px rgba(0,0,0,0.1);
@@ -153,12 +146,12 @@
 
         .mobile-nav a {
             text-decoration: none;
-            font-size: 15px;
+            font-size: 14px;
             letter-spacing: 2px;
             font-weight: 600;
             color: black;
             font-family: 'Inter', Arial, sans-serif;
-            padding: 14px 28px;
+            padding: 12px 25px;
             border-bottom: 1px solid #ddd;
         }
 
@@ -166,7 +159,6 @@
             background: #e0d6cc;
         }
 
-        /* Mobile dropdown */
         .mobile-dropdown {
             width: 100%;
         }
@@ -175,9 +167,9 @@
             width: 100%;
             background: none;
             border: none;
-            padding: 14px 28px;
+            padding: 12px 25px;
             text-align: left;
-            font-size: 15px;
+            font-size: 14px;
             letter-spacing: 2px;
             font-weight: 600;
             font-family: 'Inter', Arial, sans-serif;
@@ -210,7 +202,6 @@
             display: block;
         }
 
-        /* Overlay when menu is open */
         .overlay {
             position: fixed;
             top: 0;
@@ -226,198 +217,193 @@
             display: block;
         }
 
-        /* ================= SECTION 1: IMAGE BACKGROUND ================= */
-        .image-hero {
-            position: relative;
-            height: 120vh;
-            width: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+        .collection-section {
+            background: url('images/front.jpg') center/cover no-repeat;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            height: 100vh;
         }
 
-        .image-overlay {
+        .collection-section::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.45);
-            z-index: 1;
+            background: rgba(0,0,0,0.3);
         }
 
-        .image-content {
+        .collection-section h2 {
             position: relative;
-            z-index: 2;
-            text-align: center;
-            color: white;
-            padding: 20px;
-        }
-
-        .image-content h1 {
-            font-size: 40px;
+            z-index: 1;
+            font-size: 48px;
             letter-spacing: 4px;
             font-family: 'Didot', serif;
             font-weight: 400;
             margin-bottom: 20px;
-            margin-top: 30px;
         }
 
-        .image-content p {
-            font-size: 18px;
+        .btn-dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 10;
+        }
+
+        .dropdown-btn {
+            position: relative;
+            z-index: 1;
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 12px 30px;
+            font-size: 12px;
             letter-spacing: 2px;
-            margin-bottom: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
             font-family: 'Inter', Arial, sans-serif;
         }
 
-        .image-btn {
-            display: inline-block;
-            text-decoration: none;
-            color: white;
-            border: 1px solid white;
-            margin-top: 40px;
-            padding: 12px 35px;
-            font-size: 12px;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            background: transparent;
-        }
-
-        .image-btn:hover {
+        .dropdown-btn:hover {
             background: white;
             color: black;
         }
 
-        /* ================= COLLECTION STORY ================= */
-        .collection-story {
-            max-width: 850px;
-            margin: 110px auto 100px;
+        .btn-dropdown-content {
+            position: absolute;
+            top: 115%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            min-width: 220px;
+            display: none;
+            padding: 10px 0;
+            border-radius: 4px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+            z-index: 999;
+        }
+
+        .btn-dropdown-content a {
+            display: block;
+            padding: 12px 25px;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 13px;
+            letter-spacing: 1px;
+            font-family: 'Inter', Arial, sans-serif;
+            transition: background 0.3s ease;
             text-align: center;
-            padding: 0 25px;
         }
 
-        .story-small {
-            letter-spacing: 4px;
-            font-size: 12px;
-            color: #777;
-            margin-bottom: 18px;
-            font-family: 'Inter', Arial, sans-serif;
-        }
-
-        .collection-story h2 {
-            font-family: "EB Garamond", serif;
-            font-size: 52px;
-            font-weight: 400;
-            color: #222;
-            margin-bottom: 30px;
-            line-height: 1.2;
-        }
-
-        .story-text {
-            font-size: 17px;
-            line-height: 2;
-            color: #555;
-            max-width: 720px;
-            margin: auto;
-            font-family: 'Inter', Arial, sans-serif;
-        }
-
-        /* ================= SECTION 2: PORTFOLIO GRID ================= */
-        .portfolio-section {
+        .btn-dropdown-content a:hover {
             background: #F6F1EB;
-            padding: 60px 16px 70px 16px;
         }
 
-        .portfolio-container {
-            max-width: 1400px;
-            margin: 0 auto;
+        /* ONLY SHOW WHEN 'show' CLASS IS ADDED - NO HOVER */
+        .btn-dropdown-content.show {
+            display: block;
         }
 
-        .portfolio-title {
+        .bespoke-carousel-section {
+            background: #F6F1EB;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .bespoke-title {
             font-size: 36px;
             letter-spacing: 3px;
             font-family: 'Didot', serif;
             font-weight: 400;
             margin-bottom: 50px;
-            text-align: center;
             color: #1a1a1a;
         }
 
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+        .carousel-wrapper {
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .portfolio-item {
-            width: 100%;
+        .carousel-container {
             overflow: hidden;
-            border-radius: 4px;
-            background: #f0eae4;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            width: 100%;
         }
 
-        .portfolio-item img {
+        .carousel-track {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            flex: 0 0 calc(25% - 15px);
+            min-width: calc(25% - 15px);
+        }
+
+        .carousel-slide img {
             width: 100%;
-            height: auto;
-            aspect-ratio: 4 / 5;
+            height: 350px;
             object-fit: cover;
             display: block;
-            transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            transition: transform 0.3s ease;
         }
 
-        .portfolio-item:hover img {
+        .carousel-slide img:hover {
             transform: scale(1.02);
         }
 
-       /* ----- BUTTONS (social / bespoke) ----- */
-    .bespoke-button-wrapper {
-      margin: 50px;
-      text-align: center;
-    }
+        .carousel-arrow {
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
 
-    .bespoke-btn {
-      display: inline-block;
-      text-decoration: none;
-      color: #1a1a1a;
-      border: 1px solid #1a1a1a;
-      padding: 12px 35px;
-      font-size: 12px;
-      letter-spacing: 2px;
-      transition: all 0.3s ease;
-      background: transparent;
-      font-family: 'Inter', Arial, sans-serif;
-    }
+        .carousel-arrow:hover {
+            background: rgba(0,0,0,0.8);
+        }
 
-    .bespoke-btn:hover {
-      background: #1a1a1a;
-      color: white;
-    }
+        .bespoke-button-wrapper {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
 
-    .social-section {
-      margin: 50px 20px 30px;
-      text-align: center;
-    }
+        .bespoke-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #1a1a1a;
+            border: 1px solid #1a1a1a;
+            padding: 12px 35px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            background: transparent;
+            font-family: 'Inter', Arial, sans-serif;
+        }
 
-    .social-subtitle {
-      font-family: "EB Garamond", serif;
-      font-size: 22px;
-      color: #444;
-      margin-bottom: 25px;
-    }
+        .bespoke-btn:hover {
+            background: #1a1a1a;
+            color: white;
+        }
 
-    .social-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-
-        /* ================= FOOTER ================= */
         .footer {
             background: #222222;
             padding: 60px 40px 20px 40px;
@@ -499,7 +485,6 @@
             font-weight: 500;
         }
 
-        /* Social Icons */
         .social-icons {
             display: flex;
             gap: 16px;
@@ -573,7 +558,17 @@
             color: #ddd;
         }
 
-        /* ================= RESPONSIVE ================= */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .carousel-slide {
+                flex: 0 0 calc(50% - 10px);
+                min-width: calc(50% - 10px);
+            }
+            
+            .carousel-slide img {
+                height: 320px;
+            }
+        }
+
         @media (max-width: 768px) {
             .main-header {
                 display: none;
@@ -583,85 +578,54 @@
                 display: flex;
             }
             
-            .image-hero {
-                height: 55vh;
-                min-height: 400px;
-                max-height: 500px;
-                background-position: center 35%;
+            .collection-section {
+                height: 70vh;
+                min-height: 450px;
             }
             
-            .image-content h1 {
-                font-size: 28px;
-                letter-spacing: 3px;
-                margin-bottom: 15px;
-            }
-            
-            .image-content p {
-                font-size: 13px;
-                margin-bottom: 20px;
-            }
-            
-            .image-btn {
-                padding: 10px 28px;
-                font-size: 11px;
+            .collection-section h2 {
+                font-size: 32px;
             }
 
-            .collection-story {
-                margin: 70px auto;
+            .btn-dropdown-content {
+                min-width: 200px;
+                top: 115%;
             }
 
-            .collection-story h2 {
-                font-size: 34px;
-            }
-
-            .story-text {
-                font-size: 15px;
+            .btn-dropdown-content a {
+                padding: 14px 20px;
+                font-size: 14px;
             }
             
-            .portfolio-section {
-                padding: 45px 20px 60px 20px;
+            .carousel-slide {
+                flex: 0 0 100%;
+                min-width: 100%;
             }
             
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-                gap: 28px;
-            }
-            
-            .portfolio-title {
-                font-size: 28px;
-                margin-bottom: 32px;
-            }
-            
-            .portfolio-item img {
-                aspect-ratio: 3 / 4;
+            .carousel-slide img {
+                height: 480px;
                 width: 100%;
-                height: auto;
                 object-fit: cover;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             }
             
-            .portfolio-item:active img {
-                transform: scale(0.98);
+            .carousel-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                background: rgba(0,0,0,0.6);
             }
-            
-            .portfolio-button-wrapper {
-                margin-top: 48px;
+
+            .bespoke-title {
+                font-size: 24px;
             }
-            
-            .portfolio-btn {
-                padding: 14px 38px;
-                font-size: 12px;
-                letter-spacing: 2px;
-            }
-            
-            .footer {
-                padding: 40px 20px 20px 20px;
-            }
-            
+
             .footer-container {
                 flex-direction: column;
                 gap: 30px;
             }
-            
+
             .footer-bottom-content {
                 flex-direction: column;
                 text-align: center;
@@ -673,49 +637,19 @@
         }
 
         @media (max-width: 480px) {
-            .image-hero {
-                height: 70vh;
-                min-height: 350px;
-                max-height: 450px;
-                background-position: center 40%;
+            .collection-section {
+                height: 60vh;
+                min-height: 400px;
             }
             
-            .image-content h1 {
-                font-size: 24px;
-                letter-spacing: 2px;
-            }
-            
-            .image-content p {
-                font-size: 12px;
-            }
-            
-            .image-btn {
-                padding: 8px 24px;
-                font-size: 10px;
-            }
-
-            .collection-story h2 {
+            .collection-section h2 {
                 font-size: 28px;
             }
-
-            .story-text {
-                font-size: 14px;
-            }
             
-            .portfolio-section {
-                padding: 35px 16px 55px 16px;
-            }
-            
-            .portfolio-grid {
-                gap: 24px;
-            }
-            
-            .portfolio-item img {
-                aspect-ratio: 4 / 5;
-            }
-            
-            .portfolio-button-wrapper {
-                margin-top: 40px;
+            .carousel-slide img {
+                height: 420px;
+                border-radius: 6px;
+                box-shadow: 0 3px 12px rgba(0,0,0,0.1);
             }
 
             .social-icons {
@@ -736,38 +670,10 @@
                 margin-top: 9px;
             }
         }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 28px;
-            }
-            
-            .portfolio-item img {
-                aspect-ratio: 4 / 5;
-                object-fit: cover;
-            }
-            
-            .portfolio-section {
-                padding: 60px 30px;
-            }
-        }
-
-        img {
-            background-color: #e2d8cf;
-        }
-        
-        @media (hover: none) and (pointer: coarse) {
-            .portfolio-item:active img {
-                transform: scale(0.97);
-                transition: transform 0.1s;
-            }
-        }
     </style>
 </head>
 <body>
 
-    <!-- ================= DESKTOP HEADER ================= -->
     <header class="main-header">
         <div class="logo-top">
             <span>HORLLARD FASHION</span>
@@ -787,15 +693,13 @@
         </nav>
     </header>
 
-    <!-- ================= MOBILE HEADER ================= -->
     <div class="mobile-header">
-        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">☰</button>
+        <button class="hamburger" id="hamburgerBtn">☰</button>
         <div class="mobile-logo">
             <span>HORLLARD FASHION</span>
         </div>
     </div>
 
-    <!-- Mobile Navigation Menu -->
     <div class="mobile-nav" id="mobileNav">
         <a href="index.html">HOME</a>
         <div class="mobile-dropdown">
@@ -813,79 +717,54 @@
     </div>
     <div class="overlay" id="overlay"></div>
 
-    <!-- ================= MAIN CONTENT AREA ================= -->
     <main>
-        <!-- SECTION 1: IMAGE BACKGROUND -->
-        <section class="image-hero" style="background-image: url('image/mother\ 2.jpeg');">
-            <div class="image-overlay"></div>
-            <div class="image-content">
-                <h1>BRIDES OF THE MOTHERLAND COLLECTION</h1>
-                <p style="
-  font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.9;
-  letter-spacing: 0.5px;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 700px;
-  margin: 20px auto 0;
-  text-align: center;
-  text-transform: none;
-  font-style: italic;"> A curated bridal collection celebrating the beauty, elegance, and cultural richness of African traditions. Featuring bridal looks inspired by South Africa, Zimbabwe, Kenya, and Nigeria, the collection highlights craftsmanship, heritage, and the timeless essence of African womanhood.</p>
-   <a href="enquiry.html" class="image-btn">MAKE AN ENQUIRY</a>
+        <section class="collection-section">
+            <h2>THE BRIDAL COLLECTION</h2>
+            <div class="btn-dropdown">
+                <button class="btn dropdown-btn" id="viewCollectionBtn">VIEW COLLECTION ▾</button>
+                <div class="btn-dropdown-content" id="viewCollectionDropdown">
+                    <a href="bridal.html">Sculpted in Ivory</a>
+                    <a href="mother.html">Brides of the Motherland</a>
+                </div>
             </div>
         </section>
 
-        
-        <!-- SECTION 2: PORTFOLIO GRID -->
-        <section class="portfolio-section">
-            <div class="portfolio-container">
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <img src="image/1.jpeg" alt="Bespoke design 1 - Non bridal suit">
+        <section class="bespoke-carousel-section">
+            <h2 class="bespoke-title">BESPOKE WEARS FOR ANY OCCASION</h2>
+            
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow left-arrow" id="prevBtn">❮</button>
+                
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-slide">
+                            <img src="images/caro 1.jpg" alt="Bespoke 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/caro2.jpg" alt="Bespoke 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/caro3.jpg" alt="Bespoke 3">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/new 1.jpg" alt="Bespoke 4">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/bespok 10.jpg" alt="Bespoke 5">
+                        </div>
                     </div>
-                    
-                    <div class="portfolio-item">
-                        <img src="image/7.jpeg" alt="Custom luxury outfit">
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="image/8.jpeg" alt="Sophisticated evening wear">
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="image/5.jpeg" alt="Tailored made-to-order look">
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="image/6.jpeg" alt="Couture non-bridal ensemble">
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="image/3.jpeg" alt="Chic and modern design">
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="image/4.jpeg" alt="Statement piece gown">
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="image/9.jpeg" alt="Bespoke creative fashion">
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="image/10.jpeg" alt="Elegant non-bridal dress">
-                    </div>
-                    
                 </div>
                 
+                <button class="carousel-arrow right-arrow" id="nextBtn">❯</button>
+            </div>
+            
+            <div class="bespoke-button-wrapper">
+                <a href="https://www.instagram.com/horllardfashion?igsh=MTV1MmdoNWxlbHhsbQ%3D%3D&utm_source=qr" class="bespoke-btn">VIEW MORE ON INSTRAGRAM</a>
+                <a href="https://youtube.com/@horllardfashion?si=CKTzZBubLHwWhgOZ" class="bespoke-btn">VIEW MORE ON YOUTUBE</a>
             </div>
         </section>
-
-         <section class="social-section">
-    <p class="social-subtitle">Continue exploring the Brides of Motherland beyond our website.</p>
-    <div class="social-buttons">
-      <a href="https://www.instagram.com/horllardfashion?igsh=MTV1MmdoNWxlbHhsbQ%3D%3D&utm_source=qr" target="_blank" class="bespoke-btn">EXPLORE ON INSTAGRAM →</a>
-      <a href="https://youtube.com/@horllardfashion?si=CKTzZBubLHwWhgOZ" target="_blank" class="bespoke-btn">WATCH ON YOUTUBE →</a>
-    </div>
-  </section>
-
     </main>
 
-    <!-- ================= FOOTER ================= -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-column">
@@ -906,13 +785,11 @@
             <div class="footer-column">
                 <h3>FOLLOW US</h3>
                 <div class="social-icons">
-                    <!-- Instagram -->
                     <a href="https://www.instagram.com/horllardfashion?igsh=MTV1MmdoNWxlbHhsbQ%3D%3D&utm_source=qr" target="_blank" class="social-icon instagram" aria-label="Instagram">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
                         </svg>
                     </a>
-                    <!-- YouTube -->
                     <a href="https://youtube.com/@horllardfashion?si=CKTzZBubLHwWhgOZ" target="_blank" class="social-icon youtube" aria-label="YouTube">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
@@ -932,7 +809,7 @@
             <div class="footer-column">
                 <h3>&nbsp;</h3>
                 <ul>
-                    <!-- <li><a href="#">Privacy Policy</a></li> -->
+                    <li><a href="#">Privacy Policy</a></li>
                     <li><a href="terms.html">Terms and Condition</a></li>
                     <li><a href="enquiry.html">Contact us</a></li>
                 </ul>
@@ -940,14 +817,102 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <p>Copyright © 2025 HorllardFashion</p>
+                <p>Copyright © 2022 HorllardFashion</p>
                 <p>Website designed by <a href="#">orecodes</a></p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Hamburger Menu Toggle
+        const track = document.getElementById('carouselTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        
+        let slides = Array.from(document.querySelectorAll('.carousel-slide'));
+        const visibleSlides = 4;
+        let currentIndex = 0;
+        let autoSlideInterval;
+        const autoSlideDelay = 2000;
+        
+        function setupInfiniteCarousel() {
+            const clones = slides.slice(0, visibleSlides).map(slide => slide.cloneNode(true));
+            clones.forEach(clone => track.appendChild(clone));
+            slides = Array.from(document.querySelectorAll('.carousel-slide'));
+            updateCarousel(false);
+        }
+        
+        function getSlideWidth() {
+            const slide = slides[0];
+            const rect = slide.getBoundingClientRect();
+            const gap = 20;
+            return rect.width + gap;
+        }
+        
+        function updateCarousel(transition = true) {
+            if (!transition) {
+                track.style.transition = 'none';
+            } else {
+                track.style.transition = 'transform 0.5s ease-in-out';
+            }
+            const slideWidth = getSlideWidth();
+            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+        
+        function nextSlide() {
+            const maxIndex = slides.length - visibleSlides;
+            
+            currentIndex++;
+            updateCarousel(true);
+            
+            if (currentIndex >= maxIndex) {
+                setTimeout(() => {
+                    currentIndex = 0;
+                    updateCarousel(false);
+                }, 500);
+            }
+            resetAutoSlide();
+        }
+        
+        function prevSlide() {
+            if (currentIndex <= 0) {
+                const maxIndex = slides.length - visibleSlides;
+                currentIndex = maxIndex - 1;
+                updateCarousel(false);
+                setTimeout(() => {
+                    currentIndex--;
+                    updateCarousel(true);
+                }, 50);
+            } else {
+                currentIndex--;
+                updateCarousel(true);
+            }
+            resetAutoSlide();
+        }
+        
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, autoSlideDelay);
+        }
+        
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+        
+        setupInfiniteCarousel();
+        
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+        
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                updateCarousel(false);
+            }, 100);
+        });
+        
+        startAutoSlide();
+
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const mobileNav = document.getElementById('mobileNav');
         const overlay = document.getElementById('overlay');
@@ -955,46 +920,34 @@
         function openMenu() {
             mobileNav.classList.add('open');
             overlay.classList.add('active');
-            if (hamburgerBtn) hamburgerBtn.innerHTML = '✕';
-            document.body.style.overflow = 'hidden';
+            hamburgerBtn.innerHTML = '✕';
         }
         
         function closeMenu() {
             mobileNav.classList.remove('open');
             overlay.classList.remove('active');
-            if (hamburgerBtn) hamburgerBtn.innerHTML = '☰';
-            document.body.style.overflow = '';
+            hamburgerBtn.innerHTML = '☰';
         }
         
         if (hamburgerBtn) {
-            hamburgerBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
+            hamburgerBtn.addEventListener('click', () => {
                 if (mobileNav.classList.contains('open')) {
                     closeMenu();
                 } else {
                     openMenu();
                 }
             });
-        }
-        
-        if (overlay) {
-            overlay.addEventListener('click', closeMenu);
-        }
-        
-        const mobileLinks = document.querySelectorAll('.mobile-nav a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                closeMenu();
-            });
-        });
-        
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768 && mobileNav.classList.contains('open')) {
-                closeMenu();
+            
+            if (overlay) {
+                overlay.addEventListener('click', closeMenu);
             }
-        });
+            
+            const mobileLinks = document.querySelectorAll('.mobile-nav a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        }
 
-        // Mobile dropdown toggle
         const bridalBtn = document.getElementById('bridalBtn');
         const bridalMenu = document.getElementById('bridalMenu');
         const bridalArrow = document.getElementById('bridalArrow');
@@ -1007,18 +960,32 @@
             });
         }
 
-        // Close mobile dropdown when clicking a link inside
         document.querySelectorAll('#bridalMenu a').forEach(function(a) {
             a.addEventListener('click', closeMenu);
         });
-        
-        const allImages = document.querySelectorAll('.portfolio-item img');
-        allImages.forEach(img => {
-            img.setAttribute('loading', 'lazy');
-            if (!img.hasAttribute('alt')) {
-                img.alt = 'Horllardfashion non-bridal collection piece';
-            }
-        });
+
+        // VIEW COLLECTION BUTTON - PURE CLICK (NO HOVER)
+        const viewCollectionBtn = document.getElementById('viewCollectionBtn');
+        const viewCollectionDropdown = document.getElementById('viewCollectionDropdown');
+
+        if (viewCollectionBtn && viewCollectionDropdown) {
+            viewCollectionBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                viewCollectionDropdown.classList.toggle('show');
+            });
+
+            viewCollectionDropdown.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    viewCollectionDropdown.classList.remove('show');
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.btn-dropdown')) {
+                    viewCollectionDropdown.classList.remove('show');
+                }
+            });
+        }
     </script>
 </body>
 </html>
