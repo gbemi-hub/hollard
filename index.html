@@ -314,7 +314,9 @@
             background: #F6F1EB;
         }
 
-        .btn-dropdown:hover .btn-dropdown-content {
+        /* Show on hover, and also when 'show' class is added for click */
+        .btn-dropdown:hover .btn-dropdown-content,
+        .btn-dropdown-content.show {
             display: block;
         }
 
@@ -745,8 +747,8 @@
         <section class="collection-section">
             <h2>THE BRIDAL COLLECTION</h2>
             <div class="btn-dropdown">
-                <button class="btn dropdown-btn">VIEW COLLECTION ▾</button>
-                <div class="btn-dropdown-content">
+                <button class="btn dropdown-btn" id="viewCollectionBtn">VIEW COLLECTION ▾</button>
+                <div class="btn-dropdown-content" id="viewCollectionDropdown">
                     <a href="bridal.html">Sculpted in Ivory</a>
                     <a href="mother.html">Brides of the Motherland</a>
                 </div>
@@ -995,6 +997,33 @@
         document.querySelectorAll('#bridalMenu a').forEach(function(a) {
             a.addEventListener('click', closeMenu);
         });
+
+        // ================= VIEW COLLECTION BUTTON DROPDOWN TOGGLE =================
+        // This makes the button work with click (for mobile) AND hover (for desktop)
+        const viewCollectionBtn = document.getElementById('viewCollectionBtn');
+        const viewCollectionDropdown = document.getElementById('viewCollectionDropdown');
+
+        if (viewCollectionBtn && viewCollectionDropdown) {
+            // Toggle dropdown on button click (for mobile)
+            viewCollectionBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                viewCollectionDropdown.classList.toggle('show');
+            });
+
+            // Close dropdown when clicking on a link inside
+            viewCollectionDropdown.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    viewCollectionDropdown.classList.remove('show');
+                });
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.btn-dropdown')) {
+                    viewCollectionDropdown.classList.remove('show');
+                }
+            });
+        }
     </script>
 </body>
 </html>
