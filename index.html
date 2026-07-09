@@ -258,21 +258,64 @@
             margin-bottom: 20px;
         }
 
-        .collection-section .btn {
+        /* ================= BUTTON DROPDOWN ================= */
+        .btn-dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 10;
+        }
+
+        .dropdown-btn {
             position: relative;
             z-index: 1;
-            text-decoration: none;
-            color: white;
+            background: transparent;
             border: 1px solid white;
+            color: white;
             padding: 12px 30px;
             font-size: 12px;
             letter-spacing: 2px;
+            cursor: pointer;
             transition: all 0.3s ease;
+            font-family: 'Inter', Arial, sans-serif;
         }
 
-        .collection-section .btn:hover {
+        .dropdown-btn:hover {
             background: white;
             color: black;
+        }
+
+        .btn-dropdown-content {
+            position: absolute;
+            top: 115%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            min-width: 220px;
+            display: none;
+            padding: 10px 0;
+            border-radius: 4px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+            z-index: 999;
+        }
+
+        .btn-dropdown-content a {
+            display: block;
+            padding: 12px 25px;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 13px;
+            letter-spacing: 1px;
+            font-family: 'Inter', Arial, sans-serif;
+            transition: background 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-dropdown-content a:hover {
+            background: #F6F1EB;
+        }
+
+        .btn-dropdown:hover .btn-dropdown-content {
+            display: block;
         }
 
         /* ================= SECTION 2: BESPOKE CAROUSEL ================= */
@@ -377,7 +420,7 @@
         .footer {
             background: #222222;
             padding: 60px 40px 20px 40px;
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
         }
 
         .footer-container {
@@ -559,6 +602,16 @@
             .collection-section h2 {
                 font-size: 32px;
             }
+
+            .btn-dropdown-content {
+                min-width: 200px;
+                top: 115%;
+            }
+
+            .btn-dropdown-content a {
+                padding: 14px 20px;
+                font-size: 14px;
+            }
             
             /* ENLARGED CAROUSEL IMAGES ON MOBILE - WIDER & BOLDER */
             .carousel-slide {
@@ -567,11 +620,11 @@
             }
             
             .carousel-slide img {
-                height: 480px;  /* Increased from 450px to 480px - TALLER */
+                height: 480px;
                 width: 100%;
                 object-fit: cover;
-                border-radius: 8px;  /* Added slight rounded corners for better look */
-                box-shadow: 0 4px 15px rgba(0,0,0,0.1);  /* Added subtle shadow for depth */
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             }
             
             /* Make arrows more visible on mobile */
@@ -614,7 +667,7 @@
             
             /* Even wider/bolder on very small phones */
             .carousel-slide img {
-                height: 420px;  /* Increased from 400px to 420px */
+                height: 420px;
                 border-radius: 6px;
                 box-shadow: 0 3px 12px rgba(0,0,0,0.1);
             }
@@ -691,7 +744,13 @@
         <!-- SECTION 1: THE BRIDAL COLLECTION -->
         <section class="collection-section">
             <h2>THE BRIDAL COLLECTION</h2>
-            <a href="bridal.html" class="btn">VIEW COLLECTION</a>
+            <div class="btn-dropdown">
+                <button class="btn dropdown-btn">VIEW COLLECTION ▾</button>
+                <div class="btn-dropdown-content">
+                    <a href="bridal.html">Sculpted in Ivory</a>
+                    <a href="mother.html">Brides of the Motherland</a>
+                </div>
+            </div>
         </section>
 
         <!-- SECTION 2: BESPOKE CAROUSEL -->
@@ -726,7 +785,7 @@
             
             <div class="bespoke-button-wrapper">
                 <a href="https://www.instagram.com/horllardfashion?igsh=MTV1MmdoNWxlbHhsbQ%3D%3D&utm_source=qr" class="bespoke-btn">VIEW MORE ON INSTRAGRAM</a>
-                <a href="https://youtube.com/@horllardfashion?si=CKTzZBubLHwWhgOZ" class="bespoke-btn">WATCH MORE ON YOUTUBE</a>
+                <a href="https://youtube.com/@horllardfashion?si=CKTzZBubLHwWhgOZ" class="bespoke-btn">VIEW MORE ON YOUTUBE</a>
             </div>
         </section>
     </main>
@@ -778,9 +837,9 @@
             <div class="footer-column">
                 <h3>&nbsp;</h3>
                 <ul>
-                    <!-- <li><a href="#">Privacy Policy</a></li> -->
+                    <li><a href="#">Privacy Policy</a></li>
                     <li><a href="terms.html">Terms and Condition</a></li>
-                    <li><a href="#">Contact us</a></li>
+                    <li><a href="enquiry.html">Contact us</a></li>
                 </ul>
             </div>
         </div>
