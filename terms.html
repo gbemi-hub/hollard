@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horllardfashion - About Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Horllardfashion - Terms & Conditions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -19,13 +20,13 @@
             font-family: 'Inter', Arial, sans-serif;
         }
 
+        /* ================= HEADER ================= */
         .main-header {
             text-align: center;
             padding: 25px 20px 20px 20px;
             background: #F6F1EB;
         }
 
-        /* Top row - HORLLARD FASHION */
         .logo-top {
             margin-bottom: 25px;
         }
@@ -38,7 +39,6 @@
             color: #1a1a1ac0;
         }
 
-        /* Desktop Navigation */
         .nav-bottom {
             display: flex;
             justify-content: center;
@@ -59,7 +59,6 @@
             text-decoration: underline;
         }
 
-        /* Dropdown */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -122,18 +121,18 @@
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            font-size: 24px;
+            font-size: 28px;
             background: none;
             border: none;
             z-index: 1001;
+            color: #1a1a1a;
         }
 
-        /* Mobile Navigation Menu */
         .mobile-nav {
             position: fixed;
             top: 0;
-            left: -250px;
-            width: 250px;
+            left: -280px;
+            width: 280px;
             height: 100%;
             background: #F6F1EB;
             box-shadow: 2px 0 10px rgba(0,0,0,0.1);
@@ -151,12 +150,12 @@
 
         .mobile-nav a {
             text-decoration: none;
-            font-size: 14px;
+            font-size: 15px;
             letter-spacing: 2px;
             font-weight: 600;
             color: black;
             font-family: 'Inter', Arial, sans-serif;
-            padding: 12px 25px;
+            padding: 14px 28px;
             border-bottom: 1px solid #ddd;
         }
 
@@ -164,7 +163,6 @@
             background: #e0d6cc;
         }
 
-        /* Mobile dropdown */
         .mobile-dropdown {
             width: 100%;
         }
@@ -173,9 +171,9 @@
             width: 100%;
             background: none;
             border: none;
-            padding: 12px 25px;
+            padding: 14px 28px;
             text-align: left;
-            font-size: 14px;
+            font-size: 15px;
             letter-spacing: 2px;
             font-weight: 600;
             font-family: 'Inter', Arial, sans-serif;
@@ -208,7 +206,6 @@
             display: block;
         }
 
-        /* Overlay when menu is open */
         .overlay {
             position: fixed;
             top: 0;
@@ -224,284 +221,131 @@
             display: block;
         }
 
-        /* ================= SECTION 1: HERO ================= */
-        .collection-section {
-            height: 100vh;
-            background: url('images/about us.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            position: relative;
+        /* ================= MAIN CONTENT - TERMS ================= */
+        .terms-section {
+            padding: 80px 30px 100px;
+            background: #F6F1EB;
         }
 
-        .collection-section::before {
+        .terms-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 70px 60px;
+            border-radius: 12px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.04);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .terms-container::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.3);
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a1a1a, #c9b8a8, #1a1a1a);
         }
 
-        .collection-section .btn {
-            position: relative;
-            z-index: 1;
-            text-decoration: none;
-            color: whitesmoke;
-            border: 2px solid white;
-            font-family: 'Courier New', Courier, monospace;
-            padding: 12px 30px;
-            font-weight: 400;
-            font-size: 16px;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-        }
-
-        .collection-section .btn:hover {
-            background: white;
-            color: black;
-        }
-
-        /* ================= SECTION 2: STORY ================= */
-        .story-section {
-            background: #F6F1EB;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .story-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .story-heading {
+        .terms-icon {
             font-size: 48px;
-            letter-spacing: 4px;
-            font-family: 'Didot', serif;
-            font-weight: 400;
-            margin-bottom: 15px;
-            color: #1a1a1a;
-        }
-
-        .story-subheading {
-            font-size: 14px;
-            letter-spacing: 3px;
-            font-weight: 500;
-            margin-bottom: 40px;
-            color: #555;
-            font-family: 'Inter', Arial, sans-serif;
-        }
-
-        .story-text p {
-            font-size: 15px;
-            line-height: 1.8;
-            color: #333;
-            margin-bottom: 25px;
-            font-family: Georgia, serif;
-        }
-
-        .story-button-wrapper {
-            margin: 0px 40px;
-        }
-
-        .story-btn {
-            display: inline-block;
-            text-decoration: none;
-            color: #1a1a1a;
-            border: 1px solid #1a1a1a;
-            padding: 12px 35px;
-            font-size: 12px;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            background: transparent;
-            font-family: 'Inter', Arial, sans-serif;
-        }
-
-        .story-btn:hover {
-            background: #1a1a1a;
-            color: white;
-        }
-
-        .story-divider {
-            width: 60px;
-            height: 1px;
-            background: #ccc;
-            margin: 0 auto 30px;
-        }
-
-        .story-footer-text p {
-            font-size: 12px;
-            letter-spacing: 2px;
-            color: #888;
-            font-family: 'Inter', Arial, sans-serif;
-        }
-
-        /* ================= SECTION 3: TESTIMONIAL ================= */
-        .testimonial-section {
-            background: #F6F1EB;
-            padding: 80px 20px;
+            margin-bottom: 20px;
+            display: block;
             text-align: center;
         }
 
-        .testimonial-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .testimonial-brand {
+        .terms-container h1 {
+            font-family: "EB Garamond", serif;
             font-size: 42px;
-            letter-spacing: 4px;
-            font-family: 'Didot', serif;
             font-weight: 400;
-            margin-bottom: 40px;
             color: #1a1a1a;
-        }
-
-        .testimonial-content {
-            position: relative;
-        }
-
-        .quote-icon {
-            font-size: 60px;
-            font-family: Georgia, serif;
-            color: #ccc;
-            margin-bottom: 10px;
-        }
-
-        .testimonial-text {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #333;
-            font-family: Georgia, serif;
-            font-style: italic;
-            margin-bottom: 25px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .testimonial-author {
-            font-size: 14px;
+            text-align: center;
+            margin-bottom: 15px;
             letter-spacing: 2px;
-            color: #777;
-            font-family: 'Inter', Arial, sans-serif;
-            margin-bottom: 30px;
         }
 
-        .testimonial-dots {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .testimonial-dot {
-            width: 10px;
-            height: 10px;
-            background: #ccc;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-dot:hover {
-            background: #333;
-            transform: scale(1.2);
-        }
-
-        .testimonial-dot.active {
-            background: #1a1a1a;
-            width: 25px;
-            border-radius: 5px;
-        }
-
-        /* ================= SECTION 4: FOUNDER ================= */
-        .founder-section {
-            background: #F6F1EB;
-            padding: 40px 40px 80px 40px;
-        }
-
-        .founder-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .founder-row {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-
-        .founder-image {
-            flex: 1;
-            min-width: 280px;
-        }
-
-        .founder-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-
-        .founder-details {
-            flex: 1;
-            min-width: 280px;
-            text-align: left;
-        }
-
-        .founder-name {
-            font-size: 36px;
-            letter-spacing: 3px;
-            font-family: 'Didot', serif;
-            font-weight: 400;
-            margin-bottom: 10px;
-            color: #1a1a1a;
-        }
-
-        .founder-title {
-            font-size: 14px;
-            letter-spacing: 2px;
-            font-weight: 500;
-            margin-bottom: 25px;
+        .terms-subtitle {
+            text-align: center;
             color: #888;
-            font-family: 'Inter', Arial, sans-serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 50px;
+            font-weight: 400;
         }
 
-        .founder-bio p {
-            font-size: 15px;
+        .terms-divider {
+            width: 60px;
+            height: 2px;
+            background: #d4c9be;
+            margin: 0 auto 50px;
+        }
+
+        .term-item {
+            margin-bottom: 35px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid #f0ebe6;
+        }
+
+        .term-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .term-item h2 {
+            font-family: "EB Garamond", serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .term-item h2 .term-number {
+            color: #c9b8a8;
+            margin-right: 8px;
+        }
+
+        .term-item p {
+            font-size: 16px;
             line-height: 1.8;
-            color: #333;
-            margin-bottom: 20px;
-            font-family: Georgia, serif;
+            color: #555;
+            font-weight: 300;
         }
 
-        .founder-signature {
-            margin-top: 30px;
+        .term-item ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
         }
 
-        .founder-signature img {
-            width: 150px;
-            height: auto;
-            display: block;
+        .term-item ul li {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 6px;
+            font-weight: 300;
         }
 
-        @media (min-width: 769px) {
-            .founder-image {
-                flex: 0.9;
-            }
-            
-            .founder-details {
-                flex: 1.3;
-            }
+        .term-item ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #c9b8a8;
+            font-weight: 300;
+        }
+
+        .terms-footer-text {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 1px solid #f0ebe6;
+            font-size: 14px;
+            color: #999;
+            letter-spacing: 1px;
         }
 
         /* ================= FOOTER ================= */
@@ -533,12 +377,6 @@
             margin-bottom: 20px;
             font-weight: 600;
             color: white;
-        }
-
-        .footer-column p,
-        .footer-column ul {
-            margin: 0;
-            padding: 0;
         }
 
         .footer-column ul {
@@ -670,85 +508,56 @@
                 display: flex;
             }
 
-            .collection-section {
-                height: 80vh;
+            .terms-section {
+                padding: 50px 20px 70px;
             }
 
-            .story-section {
-                padding: 50px 20px;
+            .terms-container {
+                padding: 40px 25px;
+                border-radius: 8px;
             }
-            
-            .story-heading {
+
+            .terms-container h1 {
                 font-size: 32px;
             }
-            
-            .story-subheading {
-                font-size: 11px;
-                margin-bottom: 30px;
-            }
-            
-            .story-text p {
-                font-size: 14px;
-                line-height: 1.6;
+
+            .terms-subtitle {
+                font-size: 12px;
+                margin-bottom: 35px;
             }
 
-            .testimonial-section {
-                padding: 50px 20px;
-            }
-            
-            .testimonial-brand {
-                font-size: 32px;
-            }
-            
-            .testimonial-text {
-                font-size: 16px;
-                line-height: 1.6;
-            }
-            
-            .quote-icon {
-                font-size: 45px;
+            .term-item h2 {
+                font-size: 19px;
             }
 
-            .founder-section {
-                padding: 50px 20px;
-            }
-            
-            .founder-row {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            .founder-details {
-                text-align: center;
-            }
-            
-            .founder-name {
-                font-size: 28px;
-                text-align: center;
-            }
-            
-            .founder-title {
-                text-align: center;
-            }
-            
-            .founder-bio p {
-                font-size: 14px;
-                text-align: center;
-            }
-            
-            .founder-signature {
-                text-align: center;
-            }
-            
-            .founder-signature img {
-                margin: 0 auto;
+            .term-item p,
+            .term-item ul li {
+                font-size: 15px;
             }
 
+            .term-item ul li {
+                padding-left: 20px;
+            }
+
+            .terms-icon {
+                font-size: 36px;
+            }
+
+            .terms-footer-text {
+                font-size: 13px;
+                margin-top: 35px;
+                padding-top: 30px;
+            }
+            
+            .footer {
+                padding: 40px 20px 20px 20px;
+            }
+            
             .footer-container {
                 flex-direction: column;
                 gap: 30px;
             }
-
+            
             .footer-bottom-content {
                 flex-direction: column;
                 text-align: center;
@@ -760,8 +569,41 @@
         }
 
         @media (max-width: 480px) {
-            .collection-section {
-                height: 80vh;
+            .terms-section {
+                padding: 40px 16px 60px;
+            }
+
+            .terms-container {
+                padding: 30px 18px;
+                border-radius: 6px;
+            }
+
+            .terms-container h1 {
+                font-size: 26px;
+            }
+
+            .term-item h2 {
+                font-size: 17px;
+            }
+
+            .term-item p,
+            .term-item ul li {
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+            .terms-icon {
+                font-size: 30px;
+            }
+
+            .terms-divider {
+                width: 40px;
+                margin-bottom: 35px;
+            }
+
+            .term-item {
+                margin-bottom: 28px;
+                padding-bottom: 28px;
             }
 
             .social-icons {
@@ -796,8 +638,8 @@
             <div class="dropdown">
                 <a href="#">BRIDAL</a>
                 <div class="dropdown-content">
-                    <a href="bridal.html">SCULPTED IN IVORY</a>
-                    <a href="mother.html">BRIDES OF THE MOTHERLAND</a>
+                    <a href="sculptedinivory.html">SCULPTED IN IVORY</a>
+                    <a href="motherland.html">BRIDES OF THE MOTHERLAND</a>
                 </div>
             </div>
             <a href="nonbridal.html">BESPOKE</a>
@@ -808,7 +650,7 @@
 
     <!-- ================= MOBILE HEADER ================= -->
     <div class="mobile-header">
-        <button class="hamburger" id="hamburgerBtn">☰</button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">☰</button>
         <div class="mobile-logo">
             <span>HORLLARD FASHION</span>
         </div>
@@ -822,8 +664,8 @@
                 BRIDAL <span id="bridalArrow">▾</span>
             </button>
             <div class="mobile-dropdown-content" id="bridalMenu">
-                <a href="bridal.html">Sculpted in Ivory</a>
-                <a href="mother.html">Brides of the Motherland</a>
+                <a href="sculptedinivory.html">Sculpted in Ivory</a>
+                <a href="motherland.html">Brides of the Motherland</a>
             </div>
         </div>
         <a href="nonbridal.html">BESPOKE</a>
@@ -832,85 +674,141 @@
     </div>
     <div class="overlay" id="overlay"></div>
 
-    <!-- ================= MAIN CONTENT AREA ================= -->
+    <!-- ================= MAIN CONTENT ================= -->
     <main>
-        <!-- SECTION 1: HERO -->
-        <section class="collection-section">
-            <a href="enquiry.html" class="btn">MAKE AN ENQUIRY</a>
-        </section>
+        <section class="terms-section">
+            <div class="terms-container">
+                <span class="terms-icon">📋</span>
+                <h1>Terms & Conditions</h1>
+                <p class="terms-subtitle">PLEASE READ CAREFULLY BEFORE PLACING YOUR ORDER</p>
+                <div class="terms-divider"></div>
 
-        <!-- SECTION 2: STORY -->
-        <section class="story-section">
-            <div class="story-container">
-                <h3 class="story-subheading">BESPOKE | MADE TO ORDER</h3>
-                
-                <div class="story-text">
-                    <p>
-                        Horllardfashion is a bespoke fashion studio dedicated to creating refined, high-quality, custom-made garments that celebrate individuality and timeless style. Each piece is thoughtfully designed to reflect the personality and vision of the client, combining creativity with precise craftsmanship
-                    </p>
-                    <p>
-                        With a strong focus on detail, structure, and fit, we create garments that not only look elegant but feel effortless to wear. From bridal to occasion wear and statement pieces, every design is crafted to deliver a perfect fit and a lasting impression
-                    </p>
-                    <p>
-                        Each garment is tailored to enhance individuality, blending creativity with precision to produce pieces that feel as exceptional as they look. Our process is centred around understanding your vision and bringing it to life with care, artistry, and a commitment to excellence. We are dedicated to delivering a personalised experience where every client feels seen, understood, and confident in what they wear.
-                    </p>
+                <!-- 1. Orders -->
+                <div class="term-item">
+                    <h2><span class="term-number">1.</span> Orders</h2>
+                    <ul>
+                        <li>All garments are made to order unless stated otherwise.</li>
+                        <li>Orders are confirmed only after the required deposit has been received.</li>
+                        <li>Production begins once measurements, design details, and fabric selections have been approved.</li>
+                    </ul>
                 </div>
-                
-                <div class="story-button-wrapper">
-                    <a href="enquiry.html" class="story-btn">BOOK AN APPOINTMENT</a>
-                </div>
-                
-                <div class="story-divider"></div>
-            </div>
-        </section>
 
-        <!-- SECTION 3: FOUNDER -->
-        <section class="founder-section">
-            <div class="founder-container">
-                <div class="founder-row">
-                    <div class="founder-image">
-                        <img src="images/fonder.jpeg" alt="Founder">
-                    </div>
-                    
-                    <div class="founder-details">
-                        <h2 class="founder-name">Olaide Oladunmoye</h2>
-                        <h3 class="founder-title">Founder & Head Designer</h3>
-                        
-                        <div class="founder-bio">
-                            <p>
-                                Olaide is a passionate fashion designer dedicated to creating timeless, elegant pieces that celebrate individuality and culture. Her work is rooted in craftsmanship, attention to detail, and a deep understanding of how clothing can empower confidence and self-expression.
-                            </p>
-                            <p>
-                                With a strong eye for design and a commitment to quality, she specialises in custom-made garments that are thoughtfully tailored to each client. Every piece she creates is more than just an outfit, it's an experience, carefully designed to reflect the personality, vision, and story of the wearer.
-                            </p>
-                            <p>
-                               From bridal couture to statement occasion wear, she brings creativity and precision together, ensuring that each design feels both unique and unforgettable. Her approach blends modern aesthetics with cultural influences, resulting in pieces that are both contemporary and meaningful.
-                            </p>
-                            <p>She believes fashion should not only look beautiful but also feel personal. That's why she works closely with her clients, guiding them through every step of the process to bring their vision to life.
-                            </p>
-                        </div>
-                    </div>
+                <!-- 2. Consultations -->
+                <div class="term-item">
+                    <h2><span class="term-number">2.</span> Consultations</h2>
+                    <ul>
+                        <li>A consultation fee of £30 is required before your design consultation.</li>
+                        <li>The consultation fee is non-refundable but will be deducted from the final balance if the client proceeds with their order.</li>
+                    </ul>
                 </div>
-            </div>
-        </section>
 
-        <!-- SECTION 4: TESTIMONIAL -->
-        <section class="testimonial-section">
-            <div class="testimonial-container">
-                <h2 class="testimonial-brand">WHAT OUR CLIENTS ARE SAYING</h2>
-                
-                <div class="testimonial-content" id="testimonialContent">
-                    <div class="quote-icon">"</div>
-                    <p class="testimonial-text" id="testimonialText">
-                        "I'm honestly blown away by this dress. The craftsmanship is incredible, every detail is so thoughtfully done, and the fit is perfect. It's not just a dress, it's a statement piece, elegant, unique, and absolutely stunning. I couldn't be happier with how it turned out. Thank you for creating something so beautiful!"
-                    </p>
-                    <p class="testimonial-author" id="testimonialAuthor">- Sarah Johnson</p>
+                <!-- 3. Payments -->
+                <div class="term-item">
+                    <h2><span class="term-number">3.</span> Payments</h2>
+                    <ul>
+                        <li>A 60% non-refundable deposit is required to secure your booking.</li>
+                        <li>The remaining 40% must be paid before collection or dispatch.</li>
+                        <li>Payments are accepted via the payment methods listed on the website.</li>
+                    </ul>
                 </div>
-                
-                <div class="testimonial-dots">
-                    <span class="dot testimonial-dot" data-index="0"></span>
-                    <span class="dot testimonial-dot" data-index="1"></span>
-                    <span class="dot testimonial-dot" data-index="2"></span>
+
+                <!-- 4. Cancellations -->
+                <div class="term-item">
+                    <h2><span class="term-number">4.</span> Cancellations</h2>
+                    <ul>
+                        <li>Deposits are non-refundable because materials and production time are reserved once work begins.</li>
+                        <li>If a client cancels after production has started, any payments already made will not be refunded.</li>
+                    </ul>
+                </div>
+
+                <!-- 5. Changes to Orders -->
+                <div class="term-item">
+                    <h2><span class="term-number">5.</span> Changes to Orders</h2>
+                    <ul>
+                        <li>Minor design changes may be accepted before production begins.</li>
+                        <li>Once production has started, significant design changes may incur additional charges or may not be possible.</li>
+                    </ul>
+                </div>
+
+                <!-- 6. Measurements -->
+                <div class="term-item">
+                    <h2><span class="term-number">6.</span> Measurements</h2>
+                    <ul>
+                        <li>Clients are responsible for providing accurate measurements if they are not measured by Horllard Fashion.</li>
+                        <li>Horllard Fashion is not responsible for fit issues caused by incorrect measurements supplied by the client.</li>
+                    </ul>
+                </div>
+
+                <!-- 7. Fittings -->
+                <div class="term-item">
+                    <h2><span class="term-number">7.</span> Fittings</h2>
+                    <ul>
+                        <li>Clients should attend all scheduled fittings.</li>
+                        <li>Missed fittings may affect the completion date.</li>
+                    </ul>
+                </div>
+
+                <!-- 8. Production Time -->
+                <div class="term-item">
+                    <h2><span class="term-number">8.</span> Production Time</h2>
+                    <ul>
+                        <li>Production timelines vary depending on the complexity of the garment.</li>
+                        <li>Estimated completion dates are provided in good faith but cannot be guaranteed where delays occur due to circumstances beyond our control.</li>
+                    </ul>
+                </div>
+
+                <!-- 9. Collection and Shipping -->
+                <div class="term-item">
+                    <h2><span class="term-number">9.</span> Collection and Shipping</h2>
+                    <ul>
+                        <li>Garments must be collected or shipped once final payment has been received.</li>
+                        <li>Horllard Fashion is not responsible for delays caused by courier services after dispatch.</li>
+                    </ul>
+                </div>
+
+                <!-- 10. Returns and Refunds -->
+                <div class="term-item">
+                    <h2><span class="term-number">10.</span> Returns and Refunds</h2>
+                    <ul>
+                        <li>Due to the bespoke nature of our garments, custom-made items cannot be returned or exchanged unless they are faulty or not as agreed.</li>
+                        <li>Any concerns must be reported within 48 hours of collection or delivery.</li>
+                    </ul>
+                </div>
+
+                <!-- 11. Intellectual Property -->
+                <div class="term-item">
+                    <h2><span class="term-number">11.</span> Intellectual Property</h2>
+                    <ul>
+                        <li>All designs, photographs, logos, and website content remain the property of Horllard Fashion and may not be copied or reproduced without written permission.</li>
+                    </ul>
+                </div>
+
+                <!-- 12. Photography -->
+                <div class="term-item">
+                    <h2><span class="term-number">12.</span> Photography</h2>
+                    <ul>
+                        <li>Horllard Fashion may photograph completed garments for marketing purposes unless the client requests otherwise in writing before delivery.</li>
+                    </ul>
+                </div>
+
+                <!-- 13. Liability -->
+                <div class="term-item">
+                    <h2><span class="term-number">13.</span> Liability</h2>
+                    <ul>
+                        <li>Horllard Fashion will not be liable for delays or failure to perform due to events beyond our reasonable control, including supplier shortages, shipping disruptions, severe weather, or other unforeseen circumstances.</li>
+                    </ul>
+                </div>
+
+                <!-- 14. Governing Law -->
+                <div class="term-item">
+                    <h2><span class="term-number">14.</span> Governing Law</h2>
+                    <ul>
+                        <li>These Terms and Conditions are governed by the laws of England and Wales, and any disputes will be subject to the jurisdiction of the courts of England and Wales.</li>
+                    </ul>
+                </div>
+
+                <div class="terms-footer-text">
+                    Last Updated: July 2025
                 </div>
             </div>
         </section>
@@ -955,23 +853,23 @@
                 <h3>QUICK LINKS</h3>
                 <ul>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="enquiry.html">Shop</a></li>
-                    <li><a href="index.html">Services</a></li>
-                    <li><a href="shipping.html">Shipping</a></li>
+                    <li><a href="bridal.html">Shop</a></li>
+                    <li><a href="nonbridal.html">Services</a></li>
+                    <li><a href="enquiry.html">Shipping</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>&nbsp;</h3>
                 <ul>
                     <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms and Condition</a></li>
-                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Terms and Condition</a></li>
+                    <li><a href="enquiry.html">Contact us</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <p>Copyright © 2022 HorllardFashion</p>
+                <p>Copyright © 2025 HollardFashion</p>
                 <p>Website designed by <a href="#">orecodes</a></p>
             </div>
         </div>
@@ -986,7 +884,62 @@
         function openMenu() {
             mobileNav.classList.add('open');
             overlay.classList.add('active');
-            hamburgerBtn.innerHTML = '✕';
+            if (hamburgerBtn) hamburgerBtn.innerHTML = '✕';
+            document.body.style.overflow = 'hidden';
         }
         
         function closeMenu() {
+            mobileNav.classList.remove('open');
+            overlay.classList.remove('active');
+            if (hamburgerBtn) hamburgerBtn.innerHTML = '☰';
+            document.body.style.overflow = '';
+        }
+        
+        if (hamburgerBtn) {
+            hamburgerBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (mobileNav.classList.contains('open')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+        }
+        
+        if (overlay) {
+            overlay.addEventListener('click', closeMenu);
+        }
+        
+        const mobileLinks = document.querySelectorAll('.mobile-nav a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMenu();
+            });
+        });
+        
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && mobileNav.classList.contains('open')) {
+                closeMenu();
+            }
+        });
+
+        // Mobile dropdown toggle
+        const bridalBtn = document.getElementById('bridalBtn');
+        const bridalMenu = document.getElementById('bridalMenu');
+        const bridalArrow = document.getElementById('bridalArrow');
+
+        if (bridalBtn && bridalMenu) {
+            bridalBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                bridalMenu.classList.toggle('show');
+                bridalArrow.innerHTML = bridalMenu.classList.contains('show') ? '▴' : '▾';
+            });
+        }
+
+        // Close mobile dropdown when clicking a link inside
+        document.querySelectorAll('#bridalMenu a').forEach(function(a) {
+            a.addEventListener('click', closeMenu);
+        });
+    </script>
+</body>
+</html>
