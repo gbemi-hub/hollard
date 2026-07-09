@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horllardfashion - Make an Enquiry</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,7 +16,7 @@
 
         body {
             background: #F6F1EB;
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
         }
 
         /* ================= DESKTOP HEADER ================= */
@@ -26,16 +26,14 @@
             background: #F6F1EB;
         }
 
-        /* Top row - HORLLARD FASHION */
         .logo-top {
             margin-bottom: 25px;
-            
         }
 
         .logo-top span {
             font-size: 20px;
             letter-spacing: 4px;
-             font-family: "EB Garamond", serif;
+            font-family: "EB Garamond", serif;
             font-weight: 800;
             color: #1a1a1ac0;
         }
@@ -54,11 +52,50 @@
             letter-spacing: 1.5px;
             color: #1a1a1abb;
             font-weight: 600;
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
         }
 
         .nav-bottom a:hover {
             text-decoration: underline;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #F6F1EB;
+            min-width: 260px;
+            display: none;
+            padding: 15px 0;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, .08);
+            z-index: 999;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 14px 25px;
+            text-decoration: none;
+            color: #222;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-align: center;
+            font-family: "EB Garamond", serif;
+        }
+
+        .dropdown-content a:hover {
+            background: #efe8df;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         /* ================= MOBILE HEADER ================= */
@@ -72,9 +109,9 @@
         }
 
         .mobile-logo span {
-           font-size: 20px;
+            font-size: 20px;
             letter-spacing: 4px;
-             font-family: "EB Garamond", serif;
+            font-family: "EB Garamond", serif;
             font-weight: 800;
             color: #1a1a1ac0;
         }
@@ -105,7 +142,7 @@
             padding-top: 80px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 4px;
         }
 
         .mobile-nav.open {
@@ -118,13 +155,57 @@
             letter-spacing: 2px;
             font-weight: 600;
             color: black;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
             padding: 12px 25px;
             border-bottom: 1px solid #ddd;
         }
 
         .mobile-nav a:hover {
             background: #e0d6cc;
+        }
+
+        /* Mobile dropdown */
+        .mobile-dropdown {
+            width: 100%;
+        }
+
+        .mobile-dropdown-btn {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 12px 25px;
+            text-align: left;
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            font-family: 'Inter', Arial, sans-serif;
+            cursor: pointer;
+            color: black;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .mobile-dropdown-content {
+            display: none;
+            background: #efe8df;
+        }
+
+        .mobile-dropdown-content a {
+            display: block;
+            padding: 12px 45px;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 1px;
+            color: #444;
+            border-bottom: 1px solid #ddd;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+
+        .mobile-dropdown-content a:hover {
+            background: #e6ddd4;
+        }
+
+        .mobile-dropdown-content.show {
+            display: block;
         }
 
         /* Overlay when menu is open */
@@ -209,7 +290,7 @@
             background: #fff;
             font-size: 14px;
             transition: border 0.3s ease;
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
         }
 
         input:focus, select:focus, textarea:focus {
@@ -255,6 +336,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             margin-top: 20px;
+            font-family: 'Inter', Arial, sans-serif;
         }
 
         .submit-btn:hover {
@@ -291,7 +373,7 @@
         .footer {
             background: #222222;
             padding: 60px 40px 20px 40px;
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
         }
 
         .footer-container {
@@ -429,7 +511,13 @@
         </div>
         <nav class="nav-bottom">
             <a href="index.html">HOME</a>
-            <a href="bridal.html">BRIDAL</a>
+            <div class="dropdown">
+                <a href="#">BRIDAL</a>
+                <div class="dropdown-content">
+                    <a href="bridal.html">SCULPTED IN IVORY</a>
+                    <a href="mother.html">BRIDES OF THE MOTHERLAND</a>
+                </div>
+            </div>
             <a href="nonbridal.html">BESPOKE</a>
             <a href="about.html">ABOUT US</a>
             <a href="enquiry.html">MAKE AN ENQUIRY</a>
@@ -447,7 +535,15 @@
     <!-- Mobile Navigation Menu -->
     <div class="mobile-nav" id="mobileNav">
         <a href="index.html">HOME</a>
-        <a href="bridal.html">BRIDAL</a>
+        <div class="mobile-dropdown">
+            <button class="mobile-dropdown-btn" id="bridalBtn">
+                BRIDAL <span id="bridalArrow">▾</span>
+            </button>
+            <div class="mobile-dropdown-content" id="bridalMenu">
+                <a href="bridal.html">Sculpted in Ivory</a>
+                <a href="mother.html">Brides of the Motherland</a>
+            </div>
+        </div>
         <a href="nonbridal.html">BESPOKE</a>
         <a href="about.html">ABOUT US</a>
         <a href="enquiry.html">MAKE AN ENQUIRY</a>
@@ -555,9 +651,9 @@
                 <h3>QUICK LINKS</h3>
                 <ul>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="bridal.html">Shop</a></li>
-                    <li><a href="nonbridal.html">Services</a></li>
-                    <li><a href="enquiry.html">Shipping</a></li>
+                    <li><a href="enquiry.html">Shop</a></li>
+                    <li><a href="index.html">Services</a></li>
+                    <li><a href="shipping.html">Shipping</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -571,7 +667,7 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <p>Copyright © 2022 HollardFashion</p>
+                <p>Copyright © 2022 HorllardFashion</p>
                 <p>Website designed by <a href="#">orecodes</a></p>
             </div>
         </div>
@@ -583,19 +679,19 @@
         const mobileNav = document.getElementById('mobileNav');
         const overlay = document.getElementById('overlay');
         
+        function openMenu() {
+            mobileNav.classList.add('open');
+            overlay.classList.add('active');
+            hamburgerBtn.innerHTML = '✕';
+        }
+        
+        function closeMenu() {
+            mobileNav.classList.remove('open');
+            overlay.classList.remove('active');
+            hamburgerBtn.innerHTML = '☰';
+        }
+        
         if (hamburgerBtn) {
-            function openMenu() {
-                mobileNav.classList.add('open');
-                overlay.classList.add('active');
-                hamburgerBtn.innerHTML = '✕';
-            }
-            
-            function closeMenu() {
-                mobileNav.classList.remove('open');
-                overlay.classList.remove('active');
-                hamburgerBtn.innerHTML = '☰';
-            }
-            
             hamburgerBtn.addEventListener('click', () => {
                 if (mobileNav.classList.contains('open')) {
                     closeMenu();
@@ -613,6 +709,24 @@
                 link.addEventListener('click', closeMenu);
             });
         }
+
+        // Mobile dropdown toggle
+        const bridalBtn = document.getElementById('bridalBtn');
+        const bridalMenu = document.getElementById('bridalMenu');
+        const bridalArrow = document.getElementById('bridalArrow');
+
+        if (bridalBtn && bridalMenu) {
+            bridalBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                bridalMenu.classList.toggle('show');
+                bridalArrow.innerHTML = bridalMenu.classList.contains('show') ? '▴' : '▾';
+            });
+        }
+
+        // Close mobile dropdown when clicking a link inside
+        document.querySelectorAll('#bridalMenu a').forEach(function(a) {
+            a.addEventListener('click', closeMenu);
+        });
 
         // Form submission handling
         const form = document.getElementById('enquiryForm');

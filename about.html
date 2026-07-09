@@ -16,7 +16,7 @@
 
         body {
             background: #F6F1EB;
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
         }
 
         .main-header {
@@ -52,11 +52,50 @@
             letter-spacing: 1.5px;
             color: #1a1a1abb;
             font-weight: 600;
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
         }
 
         .nav-bottom a:hover {
             text-decoration: underline;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #F6F1EB;
+            min-width: 260px;
+            display: none;
+            padding: 15px 0;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, .08);
+            z-index: 999;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 14px 25px;
+            text-decoration: none;
+            color: #222;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-align: center;
+            font-family: "EB Garamond", serif;
+        }
+
+        .dropdown-content a:hover {
+            background: #efe8df;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         /* ================= MOBILE HEADER ================= */
@@ -103,7 +142,7 @@
             padding-top: 80px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 4px;
         }
 
         .mobile-nav.open {
@@ -116,13 +155,57 @@
             letter-spacing: 2px;
             font-weight: 600;
             color: black;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
             padding: 12px 25px;
             border-bottom: 1px solid #ddd;
         }
 
         .mobile-nav a:hover {
             background: #e0d6cc;
+        }
+
+        /* Mobile dropdown */
+        .mobile-dropdown {
+            width: 100%;
+        }
+
+        .mobile-dropdown-btn {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 12px 25px;
+            text-align: left;
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            font-family: 'Inter', Arial, sans-serif;
+            cursor: pointer;
+            color: black;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .mobile-dropdown-content {
+            display: none;
+            background: #efe8df;
+        }
+
+        .mobile-dropdown-content a {
+            display: block;
+            padding: 12px 45px;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 1px;
+            color: #444;
+            border-bottom: 1px solid #ddd;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+
+        .mobile-dropdown-content a:hover {
+            background: #e6ddd4;
+        }
+
+        .mobile-dropdown-content.show {
+            display: block;
         }
 
         /* Overlay when menu is open */
@@ -141,7 +224,7 @@
             display: block;
         }
 
-        /* ================= SECTION 1: THE BRIDAL COLLECTION (MOVED TO TOP) ================= */
+        /* ================= SECTION 1: HERO ================= */
         .collection-section {
             height: 100vh;
             background: url('images/about us.jpg');
@@ -186,7 +269,7 @@
             color: black;
         }
 
-        /* ================= SECTION 2: STORY SECTION ================= */
+        /* ================= SECTION 2: STORY ================= */
         .story-section {
             background: #F6F1EB;
             padding: 80px 20px;
@@ -213,7 +296,7 @@
             font-weight: 500;
             margin-bottom: 40px;
             color: #555;
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
         }
 
         .story-text p {
@@ -238,6 +321,7 @@
             letter-spacing: 2px;
             transition: all 0.3s ease;
             background: transparent;
+            font-family: 'Inter', Arial, sans-serif;
         }
 
         .story-btn:hover {
@@ -256,10 +340,10 @@
             font-size: 12px;
             letter-spacing: 2px;
             color: #888;
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
         }
 
-        /* ================= SECTION 3: TESTIMONIAL SECTION ================= */
+        /* ================= SECTION 3: TESTIMONIAL ================= */
         .testimonial-section {
             background: #F6F1EB;
             padding: 80px 20px;
@@ -307,11 +391,10 @@
             font-size: 14px;
             letter-spacing: 2px;
             color: #777;
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
             margin-bottom: 30px;
         }
 
-        /* Three Dots */
         .testimonial-dots {
             display: flex;
             justify-content: center;
@@ -339,7 +422,7 @@
             border-radius: 5px;
         }
 
-        /* ================= SECTION 4: ABOUT FOUNDER SECTION ================= */
+        /* ================= SECTION 4: FOUNDER ================= */
         .founder-section {
             background: #F6F1EB;
             padding: 40px 40px 80px 40px;
@@ -357,7 +440,6 @@
             flex-wrap: wrap;
         }
 
-        /* Left Side - Founder Image */
         .founder-image {
             flex: 1;
             min-width: 280px;
@@ -370,7 +452,6 @@
             object-fit: cover;
         }
 
-        /* Right Side - Founder Details */
         .founder-details {
             flex: 1;
             min-width: 280px;
@@ -392,7 +473,7 @@
             font-weight: 500;
             margin-bottom: 25px;
             color: #888;
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
         }
 
         .founder-bio p {
@@ -413,7 +494,6 @@
             display: block;
         }
 
-        /* Make text side bigger (optional) */
         @media (min-width: 769px) {
             .founder-image {
                 flex: 0.9;
@@ -428,7 +508,7 @@
         .footer {
             background: #222222;
             padding: 60px 40px 20px 40px;
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
         }
 
         .footer-container {
@@ -522,9 +602,7 @@
             color: #ddd;
         }
 
-        /* ================= RESPONSIVE MEDIA QUERIES (MOVED TO BOTTOM) ================= */
-        
-        /* Tablet and Mobile Styles */
+        /* ================= RESPONSIVE ================= */
         @media (max-width: 768px) {
             .main-header {
                 display: none;
@@ -534,9 +612,8 @@
                 display: flex;
             }
 
-            /* Mobile header background height - NOW WORKING */
             .collection-section {
-                height: 80vh ;
+                height: 80vh;
             }
 
             .story-section {
@@ -620,7 +697,6 @@
             }
         }
 
-        /* Extra small devices (phones under 480px) */
         @media (max-width: 480px) {
             .collection-section {
                 height: 80vh;
@@ -637,7 +713,13 @@
         </div>
         <nav class="nav-bottom">
             <a href="index.html">HOME</a>
-            <a href="bridal.html">BRIDAL</a>
+            <div class="dropdown">
+                <a href="#">BRIDAL</a>
+                <div class="dropdown-content">
+                    <a href="bridal.html">SCULPTED IN IVORY</a>
+                    <a href="mother.html">BRIDES OF THE MOTHERLAND</a>
+                </div>
+            </div>
             <a href="nonbridal.html">BESPOKE</a>
             <a href="about.html">ABOUT US</a>
             <a href="enquiry.html">MAKE AN ENQUIRY</a>
@@ -655,7 +737,15 @@
     <!-- Mobile Navigation Menu -->
     <div class="mobile-nav" id="mobileNav">
         <a href="index.html">HOME</a>
-        <a href="bridal.html">BRIDAL</a>
+        <div class="mobile-dropdown">
+            <button class="mobile-dropdown-btn" id="bridalBtn">
+                BRIDAL <span id="bridalArrow">▾</span>
+            </button>
+            <div class="mobile-dropdown-content" id="bridalMenu">
+                <a href="bridal.html">Sculpted in Ivory</a>
+                <a href="mother.html">Brides of the Motherland</a>
+            </div>
+        </div>
         <a href="nonbridal.html">BESPOKE</a>
         <a href="about.html">ABOUT US</a>
         <a href="enquiry.html">MAKE AN ENQUIRY</a>
@@ -664,12 +754,12 @@
 
     <!-- ================= MAIN CONTENT AREA ================= -->
     <main>
-        <!-- SECTION 1: HERO SECTION -->
+        <!-- SECTION 1: HERO -->
         <section class="collection-section">
             <a href="enquiry.html" class="btn">MAKE AN ENQUIRY</a>
         </section>
 
-        <!-- SECTION 2: STORY SECTION -->
+        <!-- SECTION 2: STORY -->
         <section class="story-section">
             <div class="story-container">
                 <h3 class="story-subheading">BESPOKE | MADE TO ORDER</h3>
@@ -694,16 +784,14 @@
             </div>
         </section>
 
-        <!-- SECTION 3: ABOUT FOUNDER SECTION -->
+        <!-- SECTION 3: FOUNDER -->
         <section class="founder-section">
             <div class="founder-container">
                 <div class="founder-row">
-                    <!-- Left Side: Founder Image -->
                     <div class="founder-image">
                         <img src="images/fonder.jpeg" alt="Founder">
                     </div>
                     
-                    <!-- Right Side: Founder Details -->
                     <div class="founder-details">
                         <h2 class="founder-name">Olaide Oladunmoye</h2>
                         <h3 class="founder-title">Founder & Head Designer</h3>
@@ -726,7 +814,7 @@
             </div>
         </section>
 
-        <!-- SECTION 4: TESTIMONIAL SECTION -->
+        <!-- SECTION 4: TESTIMONIAL -->
         <section class="testimonial-section">
             <div class="testimonial-container">
                 <h2 class="testimonial-brand">WHAT OUR CLIENTS ARE SAYING</h2>
@@ -739,7 +827,6 @@
                     <p class="testimonial-author" id="testimonialAuthor">- Sarah Johnson</p>
                 </div>
                 
-                <!-- Three Dots -->
                 <div class="testimonial-dots">
                     <span class="dot testimonial-dot" data-index="0"></span>
                     <span class="dot testimonial-dot" data-index="1"></span>
@@ -767,9 +854,9 @@
                 <h3>QUICK LINKS</h3>
                 <ul>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="bridal.html">Shop</a></li>
-                    <li><a href="nonbridal.html">Services</a></li>
-                    <li><a href="enquiry.html">Shipping</a></li>
+                    <li><a href="enquiry.html">Shop</a></li>
+                    <li><a href="index.html">Services</a></li>
+                    <li><a href="shipping.html">Shipping</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -783,7 +870,7 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <p>Copyright © 2022 HollardFashion</p>
+                <p>Copyright © 2022 HorllardFashion</p>
                 <p>Website designed by <a href="#">orecodes</a></p>
             </div>
         </div>
@@ -795,19 +882,19 @@
         const mobileNav = document.getElementById('mobileNav');
         const overlay = document.getElementById('overlay');
         
+        function openMenu() {
+            mobileNav.classList.add('open');
+            overlay.classList.add('active');
+            hamburgerBtn.innerHTML = '✕';
+        }
+        
+        function closeMenu() {
+            mobileNav.classList.remove('open');
+            overlay.classList.remove('active');
+            hamburgerBtn.innerHTML = '☰';
+        }
+        
         if (hamburgerBtn) {
-            function openMenu() {
-                mobileNav.classList.add('open');
-                overlay.classList.add('active');
-                hamburgerBtn.innerHTML = '✕';
-            }
-            
-            function closeMenu() {
-                mobileNav.classList.remove('open');
-                overlay.classList.remove('active');
-                hamburgerBtn.innerHTML = '☰';
-            }
-            
             hamburgerBtn.addEventListener('click', () => {
                 if (mobileNav.classList.contains('open')) {
                     closeMenu();
@@ -826,7 +913,25 @@
             });
         }
 
-        // Testimonial Data (MANUAL ONLY - NO AUTO-SLIDE)
+        // Mobile dropdown toggle
+        const bridalBtn = document.getElementById('bridalBtn');
+        const bridalMenu = document.getElementById('bridalMenu');
+        const bridalArrow = document.getElementById('bridalArrow');
+
+        if (bridalBtn && bridalMenu) {
+            bridalBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                bridalMenu.classList.toggle('show');
+                bridalArrow.innerHTML = bridalMenu.classList.contains('show') ? '▴' : '▾';
+            });
+        }
+
+        // Close mobile dropdown when clicking a link inside
+        document.querySelectorAll('#bridalMenu a').forEach(function(a) {
+            a.addEventListener('click', closeMenu);
+        });
+
+        // Testimonial Data
         const testimonials = [
             {
                 text: "I'm honestly blown away by this dress. The craftsmanship is incredible, every detail is so thoughtfully done, and the fit is perfect. It's not just a dress, it's a statement piece, elegant, unique, and absolutely stunning. I couldn't be happier with how it turned out. Thank you for creating something so beautiful!",
@@ -842,18 +947,15 @@
             }
         ];
 
-        // Get elements
         const testimonialText = document.getElementById('testimonialText');
         const testimonialAuthor = document.getElementById('testimonialAuthor');
         const dots = document.querySelectorAll('.testimonial-dot');
         let currentTestimonial = 0;
 
-        // Function to update testimonial (NO auto-slide)
         function updateTestimonial(index) {
             testimonialText.textContent = testimonials[index].text;
             testimonialAuthor.textContent = testimonials[index].author;
             
-            // Update active dot
             dots.forEach((dot, i) => {
                 if (i === index) {
                     dot.classList.add('active');
@@ -865,14 +967,12 @@
             currentTestimonial = index;
         }
 
-        // Add click event to dots (manual only)
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 updateTestimonial(index);
             });
         });
 
-        // Initialize first testimonial
         updateTestimonial(0);
     </script>
 </body>
