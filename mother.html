@@ -996,4 +996,29 @@
 
         // Mobile dropdown toggle
         const bridalBtn = document.getElementById('bridalBtn');
-       
+        const bridalMenu = document.getElementById('bridalMenu');
+        const bridalArrow = document.getElementById('bridalArrow');
+
+        if (bridalBtn && bridalMenu) {
+            bridalBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                bridalMenu.classList.toggle('show');
+                bridalArrow.innerHTML = bridalMenu.classList.contains('show') ? '▴' : '▾';
+            });
+        }
+
+        // Close mobile dropdown when clicking a link inside
+        document.querySelectorAll('#bridalMenu a').forEach(function(a) {
+            a.addEventListener('click', closeMenu);
+        });
+        
+        const allImages = document.querySelectorAll('.portfolio-item img');
+        allImages.forEach(img => {
+            img.setAttribute('loading', 'lazy');
+            if (!img.hasAttribute('alt')) {
+                img.alt = 'Horllardfashion non-bridal collection piece';
+            }
+        });
+    </script>
+</body>
+</html>
